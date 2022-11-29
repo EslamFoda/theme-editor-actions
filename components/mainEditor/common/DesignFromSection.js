@@ -1,15 +1,13 @@
-import { selectSectionOff } from "../../../features/add-section";
 import Designs from "./designs";
 import useCompData from "../../../hooks/useCompData";
 import { db } from "../../../utlis/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 const DesignFromSection = ({
   designs,
-  dispatch,
   compName,
   nextIndex,
   comps,
-  themeId
+  themeId,
 }) => {
   const { compData } = useCompData(compName);
   const themeData = doc(db, "themes", themeId);
@@ -30,7 +28,7 @@ const DesignFromSection = ({
     });
     await updateDoc(themeData, {
       allSections: [...comps],
-      selectSection:false
+      selectSection: false,
     });
   };
   return (

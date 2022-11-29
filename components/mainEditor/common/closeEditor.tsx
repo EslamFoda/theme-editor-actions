@@ -1,10 +1,7 @@
-import { collection, doc, onSnapshot } from "firebase/firestore";
 import { HiChevronUp } from "react-icons/hi";
 import useCloseEditor from "../../../hooks/useCloseEditor";
-import { db } from "../../../utlis/firebase";
-import { useEffect, useState } from "react";
+
 const CloseEditor = () => {
-  
   const { handleCloseEditor } = useCloseEditor();
   return (
     <div

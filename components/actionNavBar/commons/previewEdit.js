@@ -1,18 +1,13 @@
 import { updateDoc } from "firebase/firestore";
 import { FaEdit, FaEye } from "react-icons/fa";
-import { closeColors } from "../../../features/colors";
-import { selectCompName } from "../../../features/comp-name";
-import { editImgOff } from "../../../features/edit-image";
-import { addSectionTurnOff, toggleEdit } from "../../../features/edit-sections";
-import { filesOff } from "../../../features/my-files";
 
-const PreviewEdit = ({ editSections, dispatch,themeData }) => {
+const PreviewEdit = ({ editSections, themeData }) => {
   return (
     <div
       className=" mx-4 justify-self-end cursor-pointer"
-      onClick={async() => {
+      onClick={async () => {
         await updateDoc(themeData, {
-          editSections:!editSections,
+          editSections: !editSections,
           compName: "",
           editFiles: false,
           editImg: false,

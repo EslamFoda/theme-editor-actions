@@ -1,5 +1,4 @@
 import React from "react";
-import { selectSectionOff } from "../../../features/add-section";
 import { FaArrowLeft } from "react-icons/fa";
 import { db } from "../../../utlis/firebase";
 import { doc, updateDoc } from "firebase/firestore";

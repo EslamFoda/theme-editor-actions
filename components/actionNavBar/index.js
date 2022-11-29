@@ -1,18 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addSectionTurnOff, toggleEdit } from "../../features/edit-sections";
-import { changeDevice, changeWidth } from "../../features/main-width";
-import { closeColors, toggleColors } from "../../features/colors";
-import { filesOn, filesOff, toggleEditFile } from "../../features/my-files";
-import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import { selectCompName } from "../../features/comp-name";
-import { editImgOff } from "../../features/edit-image";
 import PreviewEdit from "./commons/previewEdit";
 import { IoImageOutline } from "react-icons/io5";
-import {
-  editEffectsOff,
-  fontEditOff,
-  stylesEditorOff,
-} from "../../features/stylesEditing";
 import LookAndFeel from "./commons/lookAndFeel";
 import ChangeDevices from "./commons/changeDevices";
 import Mode from "./commons/mode";

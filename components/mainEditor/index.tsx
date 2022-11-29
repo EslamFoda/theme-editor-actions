@@ -214,7 +214,6 @@ const MainEditor = () => {
                 <DesignFromSection
                   themeId={themeId}
                   designs={designs}
-                  dispatch={dispatch}
                   // setComps={setComps}
                   compName={compName}
                   comps={comps}

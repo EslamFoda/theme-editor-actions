@@ -1,5 +1,4 @@
-import { selectSectionOn } from "../../../features/add-section";
-import { selectCompName } from "../../../features/comp-name";
+
 import Image from "next/image";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../utlis/firebase";

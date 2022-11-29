@@ -1,27 +1,12 @@
-import { closeColors, openColors } from "../../../features/colors";
-import { selectCompName } from "../../../features/comp-name";
-import { editImgOff } from "../../../features/edit-image";
-import { addSectionTurnOff } from "../../../features/edit-sections";
 import { HiOutlineSparkles } from "react-icons/hi";
 import { MdOutlineInvertColors } from "react-icons/md";
 import { BsFonts } from "react-icons/bs";
 import MyTooltip from "../../ui/tooltip";
 import { useState, useEffect } from "react";
-import { filesOff } from "../../../features/my-files";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import {
-  stylesEditorOff,
-  stylesEditorOn,
-  fontEditOn,
-  fontEditOff,
-  editEffectsOff,
-  editEffectsOn,
-} from "../../../features/stylesEditing";
-import { useSelector } from "react-redux";
 import { updateDoc } from "firebase/firestore";
 const LookAndFeel = ({
   editSections,
-  dispatch,
   themeData,
   fontEdit,
   editEffects,
