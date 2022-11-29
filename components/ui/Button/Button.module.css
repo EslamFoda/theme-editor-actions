@@ -1,0 +1,87 @@
+.root {
+  transition: all 0.3s ease-in-out;
+  min-height: 50px;
+  padding: 10px 46px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+.root:disabled {
+  opacity: 0.7;
+}
+
+.root svg {
+  height: 18px;
+  width: 18px;
+}
+.primary {
+  @apply bg-primary text-white;
+}
+.primary:disabled:hover {
+  background-color: var(--primary);
+}
+.primary:hover {
+  @apply bg-primary text-white opacity-90;
+}
+
+.danger {
+  @apply bg-red-600 rounded-full  text-white;
+}
+.danger:hover {
+  @apply opacity-80;
+}
+
+.cancel {
+  @apply border-white text-white  rounded-full font-bold border-2 border-solid;
+}
+.cancel:hover {
+  @apply bg-white text-[#202b39f7];
+}
+.ghost {
+  background-color: var(--primary);
+  color: white;
+}
+.ghost:hover {
+  background-color: white;
+  color: var(--primary);
+}
+
+.link {
+  @apply text-primary  tracking-wide uppercase !p-0  !min-h-max;
+}
+.link:hover {
+  @apply opacity-80;
+}
+
+.outline {
+  @apply border-primary text-primary border-2 border-solid;
+}
+.outline:hover {
+  @apply bg-primary text-white;
+}
+
+.secondary {
+  background-color: white;
+  color: black;
+  opacity: 0.9;
+  font-weight: 600;
+}
+.secondary:hover {
+  background-color: var(--primary);
+  color: white;
+  opacity: 0.8;
+}
+
+.custom {
+  background: #f8dc68;
+  color: black;
+}
+.custom:hover {
+  background: #dfc65d;
+}
+.custom:disabled:hover {
+  background: #f8dc68;
+}
