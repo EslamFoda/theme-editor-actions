@@ -286,15 +286,21 @@ const MainEditor = () => {
         }}
         src="https://theme-preview-alpha.vercel.app/"
       /> */}
-      <iframe
+      <div
         style={{
           width: containerWidth,
+          transition: "all 0.3s ease 0s",
           margin: "0px auto",
-          transition: "width 0.2s ease 0s",
-          height: `calc(100vh - ${navHeight}px)`,
         }}
-        src="https://theme-editing.vercel.app/"
-      />
+      >
+        <iframe
+          style={{
+            width: "100%",
+            height: `calc(100vh - ${navHeight}px)`,
+          }}
+          src="https://theme-editing.vercel.app/"
+        />
+      </div>
     </div>
   );
 };
