@@ -60,7 +60,7 @@ const ChangeDevices = ({ dispatch, device, themeData }) => {
             // await updateDoc(themeData, {
             //   containerWidth: "100%",
             // });
-            dispatch(changeWidth("100%"));
+            dispatch(changeWidth("100vw"));
           }}
           size={36}
           className="hover:text-white  cursor-pointer text-[#98A2B3]"

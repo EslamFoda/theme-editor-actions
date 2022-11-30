@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import ActionNavBar from "../actionNavBar";
 import { useSelector, useDispatch } from "react-redux";
@@ -107,6 +107,7 @@ const MainEditor = () => {
   );
   const [currentFont, setCurrentFont] = useStickyState(fonts[0], "theme-font");
   const [mode, setMode] = useStickyState(modes[0], "theme-mode");
+  const [navHeight, setNavHeight] = useState(0);
 
   const dispatch = useDispatch();
   // const editSections = useSelector((state: any) => state.editSections.value);
@@ -158,6 +159,13 @@ const MainEditor = () => {
   //   });
   // }, []);
 
+  const navEl = useRef(null);
+  useEffect(() => {
+    if (navEl.current.offsetHeight) {
+      setNavHeight(navEl.current.offsetHeight);
+    }
+  });
+
   useEffect(() => {
     if (themeId) {
       const docRef = doc(db, "themes", themeId);
@@ -179,7 +187,7 @@ const MainEditor = () => {
         .filter(Boolean)
         .join(" ")}
     >
-      <div className="sticky top-0 right-0 z-50">
+      <div ref={navEl} className="sticky top-0 right-0 z-50">
         {themeId && (
           <ActionNavBar
             editSections={editSections}
@@ -257,14 +265,35 @@ const MainEditor = () => {
         ) : null}
       </div>
 
+      {/* <iframe
+        style={{
+          width: containerWidth,
+          margin: "0px auto",
+          transition: "width 0.2s ease 0s",
+          display: editSections ? "block" : "none",
+          height: `calc(100vh - ${navHeight}px)`,
+        }}
+        src="https://themes-edit.vercel.app/"
+      />
+
       <iframe
         style={{
           width: containerWidth,
           margin: "0px auto",
           transition: "width 0.2s ease 0s",
+          display: editSections ? "none" : "block",
+          height: `calc(100vh - ${navHeight}px)`,
         }}
-        className="h-[90vh]"
-        src={editSections ?"https://themes-edit.vercel.app/" : "https://theme-preview-alpha.vercel.app/"}
+        src="https://theme-preview-alpha.vercel.app/"
+      /> */}
+      <iframe
+        style={{
+          width: containerWidth,
+          margin: "0px auto",
+          transition: "width 0.2s ease 0s",
+          height: `calc(100vh - ${navHeight}px)`,
+        }}
+        src="https://theme-editing.vercel.app/"
       />
     </div>
   );
