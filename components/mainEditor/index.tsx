@@ -84,8 +84,6 @@ const MainEditor = () => {
     selectSection,
     themeColor,
     themeFont,
-    // containerWidth,
-    // currentColor,
   } = useMainData();
   // const [themeId, setThemeId] = useState(null);
   // const [nextIndex, setNextIndex] = useState(null);
@@ -266,7 +264,7 @@ const MainEditor = () => {
           transition: "width 0.2s ease 0s",
         }}
         className="h-[90vh]"
-        src="https://theme-editing.vercel.app/"
+        src={editSections ?"https://themes-edit.vercel.app/" : "https://theme-preview-alpha.vercel.app/"}
       />
     </div>
   );
