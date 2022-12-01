@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../utlis/firebase";
+import { useRouter } from "next/router";
 const useMainData = () => {
+  const {
+    query: { id },
+  } = useRouter();
+
+  const themeId = id;
   const [comps, setComps] = useState(null);
-  const [themeId, setThemeId] = useState(null);
+  // const [themeId, setThemeId] = useState(id);
   const [nextIndex, setNextIndex] = useState(null);
   const [itemIndex, setItemIndex] = useState(null);
   const [compName, setCompName] = useState(null);
@@ -18,33 +24,28 @@ const useMainData = () => {
   const [selectSection, setSelectSection] = useState(null);
   const [themeColor, setThemeColor] = useState(null);
   const [themeFont, setThemeFont] = useState(null);
-  const [containerWidth, setContainerWidth] = useState(null);
 
-  useEffect(
-    () =>
-      onSnapshot(collection(db, "themes"), (snapshot) => {
-        snapshot.docs.forEach((doc) => {
-          setThemeId(doc.id);
-          setNextIndex(doc.data().nextIndex);
-          setComps(doc.data().allSections);
-          setItemIndex(doc.data().itemIndex);
-          setCompName(doc.data().compName);
-          setEditImg(doc.data().editImg);
-          setEditFiles(doc.data().editFiles);
-          setFontEdit(doc.data().fontEdit);
-          setEditEffects(doc.data().editEffects);
-          setColorsEdit(doc.data().colorsEdit);
-          setStylesEditing(doc.data().stylesEditing);
-          setAddSection(doc.data().addSection);
-          setEditSections(doc.data().editSections);
-          setSelectSection(doc.data().selectSection);
-          setThemeColor(doc.data().themeColor);
-          setThemeFont(doc.data().themeFont);
-          setContainerWidth(doc.data().containerWidth);
-        });
-      }),
-    []
-  );
+  const docRef = doc(db, "themes", id);
+  useEffect(() => {
+    const unsub = onSnapshot(docRef, (doc) => {
+      setNextIndex(doc.data().nextIndex);
+      setComps(doc.data().allSections);
+      setItemIndex(doc.data().itemIndex);
+      setCompName(doc.data().compName);
+      setEditImg(doc.data().editImg);
+      setEditFiles(doc.data().editFiles);
+      setFontEdit(doc.data().fontEdit);
+      setEditEffects(doc.data().editEffects);
+      setColorsEdit(doc.data().colorsEdit);
+      setStylesEditing(doc.data().stylesEditing);
+      setAddSection(doc.data().addSection);
+      setEditSections(doc.data().editSections);
+      setSelectSection(doc.data().selectSection);
+      setThemeColor(doc.data().themeColor);
+      setThemeFont(doc.data().themeFont);
+    });
+    return () => unsub();
+  }, [id]);
 
   return {
     comps,
@@ -63,7 +64,6 @@ const useMainData = () => {
     selectSection,
     themeColor,
     themeFont,
-    containerWidth,
   };
 };
 

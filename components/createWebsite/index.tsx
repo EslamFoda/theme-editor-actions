@@ -1,21 +1,11 @@
-import useCurrentUser from "../../hooks/useCurrentUser";
-import Button from "../../components/ui/Button";
-import {
-  collection,
-  addDoc,
-  query,
-  where,
-  getDocs,
-  onSnapshot,
-} from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
+import { useRouter } from "next/router";
 import { db } from "../../utlis/firebase";
-import { useEffect } from "react";
-import { useAuth } from "../../context/authContext";
 
-const Dashboard = () => {
+const CreateWebsite = ({ user }) => {
+  const { push } = useRouter();
   const docRef = collection(db, "themes");
-//   const { user } = useCurrentUser();
-  const {user} = useAuth()
+
   const webData = {
     addSection: false,
     allSections: [
@@ -70,59 +60,39 @@ const Dashboard = () => {
     stylesEditing: false,
     themeColor: "Captain-Green",
     themeFont: "sans",
-    userId: user.uid,
+    userId: user?.uid,
   };
 
   const createWeb = async () => {
-    await addDoc(docRef, webData);
-  };
-
-  //   useEffect(
-  //     () =>
-  //       onSnapshot(
-  //         query(
-  //           collection(db,"themes"),
-  //           where("userId", "==", user.uid),
-  //           (snapshot) =>
-  //             setArticles(
-  //               snapshot.docs.map((doc) => ({
-  //                 ...doc.data(),
-  //                 id: doc.id,
-  //               }))
-  //             )
-  //             console.log(snapshot.docs)
-  //         )
-  //       ),
-  //     []
-  //   );
-
-  useEffect(() => {
-   
-    const getAllWebsites = async () => {
-      const q = query(
-        collection(db, "themes"),
-        where("userId", "==", user?.uid)
-      );
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-      });
-    };
-    if (user) {
-      getAllWebsites();
+    try {
+      const website = await addDoc(docRef, webData);
+      push(`/site/${website.id}`);
+    } catch (error) {
+      console.log(error);
     }
-  }, [user]);
-
+  };
   return (
-    <>
-      {user?.email}
-      <div>
-        <Button onClick={createWeb} variant="custom">
-          create website
-        </Button>
+    <div className="bg-white shadow-md w-full">
+      <div className="flex items-center justify-between container m-auto py-14">
+        <div className="space-y-2 ">
+          <h1 className="text-3xl text-[#1A1A1A] font-bold">
+            Manage your sites
+          </h1>
+          <span className="block text-[rgba(0,0,0,.6)]">
+            From here you can manage / upgrade or modify your site settings
+          </span>
+        </div>
+        <div>
+          <button
+            onClick={createWeb}
+            className="text-white bg-[#00a991] hover:bg-[#0ea08a] py-2 px-5 rounded-full"
+          >
+            Create New Website
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Dashboard;
+export default CreateWebsite;

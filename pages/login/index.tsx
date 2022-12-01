@@ -1,23 +1,21 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../utlis/firebase";
 import { useRouter } from "next/router";
-const Register = () => {
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../utlis/firebase";
+const Login = () => {
   const { push } = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const register = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const user = await createUserWithEmailAndPassword(auth, email, password);
+      const user = await signInWithEmailAndPassword(auth, email, password);
       console.log(user);
       push("/");
     } catch (error) {
       console.log(error.message);
     }
   };
-
   return (
     <section className="bg-gray-50 h-screen dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -32,14 +30,11 @@ const Register = () => {
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-              Create and account
+              Log in
             </h1>
             <form className="space-y-4 md:space-y-6" action="#">
               <div>
-                <label
-                  for="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Your email
                 </label>
                 <input
@@ -51,14 +46,11 @@ const Register = () => {
                   id="email"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@company.com"
-                  required=""
+                  required
                 />
               </div>
               <div>
-                <label
-                  for="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
+                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Password
                 </label>
                 <input
@@ -70,7 +62,7 @@ const Register = () => {
                   id="password"
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required=""
+                  required
                 />
               </div>
 
@@ -81,14 +73,11 @@ const Register = () => {
                     aria-describedby="terms"
                     type="checkbox"
                     className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                    required=""
+                    required
                   />
                 </div>
                 <div className="ml-3 text-sm">
-                  <label
-                    for="terms"
-                    className="font-light text-gray-500 dark:text-gray-300"
-                  >
+                  <label className="font-light text-gray-500 dark:text-gray-300">
                     I accept the{" "}
                     <span className="font-medium text-primary-600 hover:underline dark:text-primary-500">
                       Terms and Conditions
@@ -97,18 +86,21 @@ const Register = () => {
                 </div>
               </div>
               <button
-                onClick={register}
+                onClick={handleLogin}
                 type="submit"
                 className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
-                Create an account
+                Login here
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Already have an account?{" "}
-                <span onClick={()=>{
-                    push("/login")
-                }} className="font-medium text-primary-600 hover:underline dark:text-primary-500">
-                  Login here
+                dont have an account?{" "}
+                <span
+                  onClick={() => {
+                    push("/register");
+                  }}
+                  className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                >
+                  create account
                 </span>
               </p>
             </form>
@@ -119,4 +111,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

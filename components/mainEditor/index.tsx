@@ -65,7 +65,7 @@ const effects = ["no-animation", "fade-up", "zoom-in-up", "flip-up"];
 
 const modes = ["light", "dark"];
 
-const MainEditor = () => {
+const MainEditor = ({ id }) => {
   // const { comps, setComps } = useContext(CompsContext);
   const {
     addSection,
@@ -166,41 +166,36 @@ const MainEditor = () => {
     }
   });
 
+  const docRef = doc(db, "themes", id);
+
   useEffect(() => {
-    if (themeId) {
-      const docRef = doc(db, "themes", themeId);
-      setDoc(
-        docRef,
-        {
-          themeColor: currentColor,
-          themeFont: currentFont,
-        },
-        {
-          merge: true,
-        }
-      ).then(() => console.log("Document updated"));
-    }
-  }, [currentColor, currentFont, themeId]);
+    setDoc(
+      docRef,
+      {
+        themeColor: currentColor,
+        themeFont: currentFont,
+      },
+      {
+        merge: true,
+      }
+    ).then(() => console.log("Document updated"));
+  }, [currentColor, currentFont, id]);
   return (
-    <div
-      className={[themeColor && `theme-${themeColor}`, mode && `theme-${mode}`]
-        .filter(Boolean)
-        .join(" ")}
-    >
+    <div>
       <div ref={navEl} className="sticky top-0 right-0 z-50">
-        {themeId && (
+        {id && (
           <ActionNavBar
             editSections={editSections}
             fontEdit={fontEdit}
             editEffects={editEffects}
             colorsEdit={colorsEdit}
             editFiles={editFiles}
-            themeId={themeId}
+            themeId={id}
           />
         )}
         {editSections && compName && !addSection && (
           <SelectDesign
-            themeId={themeId}
+            themeId={id}
             comps={comps}
             designs={designs}
             nextIndex={nextIndex}
@@ -213,12 +208,12 @@ const MainEditor = () => {
               selectSection={selectSection}
               dispatch={dispatch}
               compName={compName}
-              themeId={themeId}
+              themeId={id}
             />
             <div className="h-40 flex items-center gap-4  scrollable overflow-auto w-full">
               {selectSection ? (
                 <DesignFromSection
-                  themeId={themeId}
+                  themeId={id}
                   designs={designs}
                   // setComps={setComps}
                   compName={compName}
@@ -227,7 +222,7 @@ const MainEditor = () => {
                 />
               ) : (
                 <SelectSection
-                  themeId={themeId}
+                  themeId={id}
                   dispatch={dispatch}
                   sectionsImgs={sectionsImgs}
                 />
@@ -238,7 +233,7 @@ const MainEditor = () => {
         )}
         {stylesEditing && !addSection && editSections ? (
           <ChangeStyles
-            themeId={themeId}
+            themeId={id}
             currentEffect={currentEffect}
             setCurrentEffect={setCurrentEffect}
             editEffects={editEffects}
@@ -260,7 +255,7 @@ const MainEditor = () => {
             itemIndex={itemIndex}
             compIndex={nextIndex}
             comps={comps}
-            themeId={themeId}
+            themeId={id}
           />
         ) : null}
       </div>
@@ -298,7 +293,7 @@ const MainEditor = () => {
             width: "100%",
             height: `calc(100vh - ${navHeight}px)`,
           }}
-          src="https://theme-editing.vercel.app/"
+          src={`https://theme-editing.vercel.app/${id}`}
         />
       </div>
     </div>

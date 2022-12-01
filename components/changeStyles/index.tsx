@@ -25,6 +25,7 @@ const ChangeStyles = ({
   return (
     <div className="bg-[#26313f] flex px-5 relative">
       <Bar
+      currentColor={currentColor}
         openColors={openColors}
         fontEdit={fontEdit}
         currentFont={currentFont}

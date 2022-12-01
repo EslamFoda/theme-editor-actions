@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { MdOutlineDone } from "react-icons/md";
 import ActiveIcon from "./activeIcon";
 interface Props {
   colors?: [];
@@ -22,11 +21,12 @@ const ColorPalettes: FC<Props> = ({
   allPaltes,
   label,
 }) => {
+  console.log(currentColor)
   const className = allPaltes
     ? [
         "h-full min-w-[220px] rounded-lg relative grid grid-cols-3  cursor-pointer",
         color && `theme-${color}`,
-        mode && `theme-${mode}`,
+        mode && `theme-light`,
         `${
           color === currentColor
             ? "border-[#23cba5] border-[3px] border-solid"
@@ -35,7 +35,7 @@ const ColorPalettes: FC<Props> = ({
       ]
         .filter(Boolean)
         .join(" ")
-    : "h-[111px] relative border-[#23cba5] rounded-lg border-[3px] border-solid grid grid-cols-3 w-full";
+    : `h-[111px] relative border-[#23cba5] theme-${currentColor} theme-light rounded-lg border-[3px] border-solid grid grid-cols-3 w-full`;
 
   const handleSelectColors = () => {
     allPaltes ? setCurrentColor(colors[i], "theme-color") : "";
@@ -52,7 +52,7 @@ const ColorPalettes: FC<Props> = ({
         {" "}
         <span className="text-white font-mono">{labels}</span>
       </div>
-      <ActiveIcon styles={color} currentStyle={currentColor}/>
+      <ActiveIcon styles={color} currentStyle={currentColor} />
     </div>
   );
 };

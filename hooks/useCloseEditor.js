@@ -1,28 +1,8 @@
-import { useDispatch } from "react-redux";
-import { closeColors } from "../features/colors";
-import {
-  editEffectsOff,
-  fontEditOff,
-  stylesEditorOff,
-} from "../features/stylesEditing";
-import { useState, useEffect } from "react";
-import { addSectionTurnOff } from "../features/edit-sections";
-import { editImgOff } from "../features/edit-image";
-import { filesOff } from "../features/my-files";
-import { selectCompName } from "../features/comp-name";
-import { collection, doc, onSnapshot, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../utlis/firebase";
+import useMainData from "./useMainData";
 const useCloseEditor = () => {
-  const [themeId, setThemeId] = useState(null);
-
-  useEffect(() => {
-    onSnapshot(collection(db, "themes"), (snapshot) => {
-      snapshot.docs.forEach((doc) => {
-        setThemeId(doc.id);
-      });
-    });
-  }, []);
-  const dispatch = useDispatch();
+  const { themeId } = useMainData();
 
   const handleCloseEditor = async () => {
     const themeData = doc(db, "themes", themeId);
@@ -36,14 +16,6 @@ const useCloseEditor = () => {
       editEffects: false,
       stylesEditing: false,
     });
-    // dispatch(closeColors());
-    // dispatch(fontEditOff());
-    // dispatch(selectCompName(""));
-    // dispatch(addSectionTurnOff());
-    // dispatch(editImgOff());
-    // dispatch(filesOff());
-    // dispatch(editEffectsOff());
-    // dispatch(stylesEditorOff());
   };
 
   return { handleCloseEditor };

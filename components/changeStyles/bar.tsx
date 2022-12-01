@@ -7,8 +7,9 @@ interface Props {
   fontEdit: boolean;
   currentFont?: string;
   currentEffect?:string
+  currentColor:string
 }
-const Bar = ({ openColors, fontEdit, currentFont,currentEffect }: Props) => {
+const Bar = ({ openColors, fontEdit, currentFont,currentEffect,currentColor }: Props) => {
   const title = openColors
     ? "Choose Color palettes"
     : fontEdit
@@ -25,7 +26,7 @@ const Bar = ({ openColors, fontEdit, currentFont,currentEffect }: Props) => {
       <TextBar title={title} subTitle={subTitle} />
       <div className="w-72 space-y-2  p-4 border-r  border-solid border-[#353f4b] h-full">
         {openColors ? (
-          <ColorPalettes allPaltes={false} label={"Current Color"} />
+          <ColorPalettes currentColor={currentColor} allPaltes={false} label={"Current Color"} />
         ) : fontEdit ? (
           <FontStyle currentFont={currentFont} />
         ) : (
