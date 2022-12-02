@@ -11,7 +11,7 @@ interface Props {
   currentColor?: string;
   allPaltes: boolean;
   label?: string;
-  docRef: any;
+  docRef?: any;
 }
 
 const ColorPalettes: FC<Props> = ({
