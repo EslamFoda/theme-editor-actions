@@ -40,8 +40,9 @@ const CreateWebsite = ({ user }) => {
                   Create New Website
                 </Dialog.Title>
                 <Dialog.Description className="DialogDescription">
-                  Enter your website details here. Click create when you're
-                  done.
+                  {
+                    "Enter your website details here. Click create when you're done."
+                  }
                 </Dialog.Description>
                 <Formik
                   initialValues={{ webSiteName: "", email: "", mobile: "" }}
