@@ -1,8 +1,7 @@
 import { RiImageAddLine } from "react-icons/ri";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+
 import * as Toast from "@radix-ui/react-toast";
 import { MdError, MdClose } from "react-icons/md";
 import { TfiTrash } from "react-icons/tfi";
@@ -128,6 +127,7 @@ const ChangeImgs = ({
               return (
                 <div
                   onClick={async () => {
+                    console.log(itemIndex)
                     if ((!editFiles && itemIndex) || itemIndex === 0) {
                       comps[compIndex].compData.items[itemIndex].pic = img;
 

@@ -283,7 +283,7 @@ const MainEditor = ({ id }) => {
       /> */}
       <div
         style={{
-          width: containerWidth,
+          maxWidth: containerWidth,
           transition: "all 0.3s ease 0s",
           margin: "0px auto",
         }}
