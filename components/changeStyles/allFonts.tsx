@@ -1,59 +1,20 @@
+import { updateDoc } from "firebase/firestore";
 import { FC } from "react";
-import { MdOutlineDone } from "react-icons/md";
 import ActiveIcon from "./activeIcon";
 interface Props {
   fonts?: [];
   i?: number;
-  setCurrentFont?: any;
-  //   color?: string;
-  //   mode?: string;
+  docRef: any;
   currentFont?: string;
-  //   allPaltes: boolean;
-  //   label?: string;
   font: string;
 }
 
-const AllFonts: FC<Props> = ({
-  font,
-  i,
-  currentFont,
-  setCurrentFont,
-  fonts,
-  //   colors,
-  //   color,
-  //   mode,
-  //   allPaltes,
-  //   label,
-}) => {
-  //   const className = allPaltes
-  //     ? [
-  //         "h-full min-w-[220px] rounded-lg relative grid grid-cols-3  cursor-pointer",
-  //         color && `theme-${color}`,
-  //         mode && `theme-${mode}`,
-  //         `${
-  //           color === currentColor
-  //             ? "border-[#23cba5] border-[3px] border-solid"
-  //             : "border-[3px] border-[#26313f]"
-  //         }`,
-  //       ]
-  //         .filter(Boolean)
-  //         .join(" ")
-  //     : "h-[111px] relative border-[#23cba5] rounded-lg border-[3px] border-solid grid grid-cols-3 w-full";
-
-  const handleSelectFont = () => {
-    setCurrentFont(fonts[i], "theme-font");
+const AllFonts: FC<Props> = ({ font, docRef, i, currentFont, fonts }) => {
+  const handleSelectFont = async () => {
+    await updateDoc(docRef, {
+      themeFont: fonts[i],
+    });
   };
-
-  //   const labels = allPaltes ? color.replace(/-/g, " ") : label;
-
-  //   className={[
-  //     `font font-choosedFont`,
-  //     currentFont && `fontName-${currentFont}`,
-  //     currentColor && `theme-${currentColor}`,
-  //     mode && `theme-${mode}`,
-  //   ]
-  //     .filter(Boolean)
-  //     .join(" ")}
 
   return (
     <div

@@ -1,32 +1,33 @@
+import { doc, updateDoc } from "firebase/firestore";
 import { FC } from "react";
+import useMainData from "../../hooks/useMainData";
+import { db } from "../../utlis/firebase";
 import ActiveIcon from "./activeIcon";
 interface Props {
   colors?: [];
   i?: number;
   setCurrentColor?: any;
   color?: string;
-  mode?: string;
   currentColor?: string;
   allPaltes: boolean;
   label?: string;
+  docRef: any;
 }
 
 const ColorPalettes: FC<Props> = ({
   colors,
   i,
-  setCurrentColor,
   color,
-  mode,
   currentColor,
   allPaltes,
   label,
+  docRef,
 }) => {
-  console.log(currentColor)
   const className = allPaltes
     ? [
         "h-full min-w-[220px] rounded-lg relative grid grid-cols-3  cursor-pointer",
         color && `theme-${color}`,
-        mode && `theme-light`,
+        `theme-light`,
         `${
           color === currentColor
             ? "border-[#23cba5] border-[3px] border-solid"
@@ -37,8 +38,12 @@ const ColorPalettes: FC<Props> = ({
         .join(" ")
     : `h-[111px] relative border-[#23cba5] theme-${currentColor} theme-light rounded-lg border-[3px] border-solid grid grid-cols-3 w-full`;
 
-  const handleSelectColors = () => {
-    allPaltes ? setCurrentColor(colors[i], "theme-color") : "";
+  const handleSelectColors = async () => {
+    allPaltes
+      ? await updateDoc(docRef, {
+          themeColor: colors[i],
+        })
+      : "";
   };
 
   const labels = allPaltes ? color.replace(/-/g, " ") : label;

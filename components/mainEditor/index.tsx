@@ -8,14 +8,11 @@ import SelectSection from "./common/selectSection";
 import DesignFromSection from "./common/DesignFromSection";
 import { sectionsImgs } from "../../constant";
 import ActionBarDesc from "./common/actionBarDesc";
-
 import { useStickyState } from "../../hooks/useStickyState";
 import ChangeImgs from "../changeImgs";
 import ChangeStyles from "../changeStyles";
 import CloseEditor from "./common/closeEditor";
 import useMainData from "../../hooks/useMainData";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../utlis/firebase";
 
 const colors = [
   "Captain-Green",
@@ -66,7 +63,6 @@ const effects = ["no-animation", "fade-up", "zoom-in-up", "flip-up"];
 const modes = ["light", "dark"];
 
 const MainEditor = ({ id }) => {
-  // const { comps, setComps } = useContext(CompsContext);
   const {
     addSection,
     colorsEdit,
@@ -85,79 +81,18 @@ const MainEditor = ({ id }) => {
     themeColor,
     themeFont,
   } = useMainData();
-  // const [themeId, setThemeId] = useState(null);
-  // const [nextIndex, setNextIndex] = useState(null);
-  // const [itemIndex, setItemIndex] = useState(null);
-  // const [compName, setCompName] = useState(null);
-  // const [editImg, setEditImg] = useState(null);
-  // const [editFiles, setEditFiles] = useState(null);
-  // const [fontEdit, setFontEdit] = useState(null);
-  // const [editEffects, setEditEffects] = useState(null);
-  // const [colorsEdit, setColorsEdit] = useState(null);
-  // const [stylesEditing, setStylesEditing] = useState(null);
-  // const [addSection, setAddSection] = useState(null);
-  // const [editSections, setEditSections] = useState(null);
-  const [currentColor, setCurrentColor] = useStickyState(
-    colors[0],
-    "theme-color"
-  );
+
   const [currentEffect, setCurrentEffect] = useStickyState(
     effects[0],
     "theme-effects"
   );
-  const [currentFont, setCurrentFont] = useStickyState(fonts[0], "theme-font");
   const [mode, setMode] = useStickyState(modes[0], "theme-mode");
   const [navHeight, setNavHeight] = useState(0);
 
   const dispatch = useDispatch();
-  // const editSections = useSelector((state: any) => state.editSections.value);
-  // const addSection = useSelector((state: any) => state.editSections.addSection);
-  // const selectSection = useSelector(
-  //   (state: any) => state.addSections.selectSection
-  // );
-  // const nextIndex = useSelector((state: any) => state.addSections.compIndex);
-  // const openColors = useSelector((state: any) => state.colors.enableColors);
-  // const compName = useSelector((state: any) => state.compName.compName);
+
   const { designs } = useChooseDesign(compName);
   const containerWidth = useSelector((state: any) => state.mainWidth.width);
-  // const editImg = useSelector((state: any) => state.editImg.editImage);
-  // const editFiles = useSelector((state: any) => state.files.editFiles);
-  // const stylesEditing = useSelector(
-  //   (state: any) => state.stylesEdit.stylesEditor
-  // );
-  // const fontEdit = useSelector((state: any) => state.stylesEdit.fontEdit);
-  // const editEffects = useSelector((state: any) => state.stylesEdit.editEffects);
-
-  // useEffect(() => {
-  //   const data = window.localStorage.getItem("ALL_SECTIONS");
-  //   if (data !== null) setComps([...JSON.parse(data)]);
-  // }, []);
-
-  // useEffect(() => {
-  //   window.localStorage.setItem("ALL_SECTIONS", JSON.stringify(comps));
-  // }, [comps]);
-
-  // const [comps, setComps] = useState(null);
-  // const [themeId, setThemeId] = useState(null);
-  // useEffect(() => {
-  //   onSnapshot(collection(db, "themes"), (snapshot) => {
-  //     snapshot.docs.forEach((doc) => {
-  //       setThemeId(doc.id);
-  //       setNextIndex(doc.data().nextIndex);
-  //       setComps(doc.data().allSections);
-  //       setItemIndex(doc.data().itemIndex);
-  //       setCompName(doc.data().compName);
-  //       setEditImg(doc.data().editImg);
-  //       setEditFiles(doc.data().editFiles);
-  //       setFontEdit(doc.data().fontEdit);
-  //       setEditEffects(doc.data().editEffects);
-  //       setColorsEdit(doc.data().colorsEdit);
-  //       setStylesEditing(doc.data().stylesEditing);
-  //       setAddSection(doc.data().addSection);
-  //       setEditSections(doc.data().editSections);
-  //     });
-  //   });
-  // }, []);
 
   const navEl = useRef(null);
   useEffect(() => {
@@ -166,20 +101,6 @@ const MainEditor = ({ id }) => {
     }
   });
 
-  const docRef = doc(db, "themes", id);
-
-  useEffect(() => {
-    setDoc(
-      docRef,
-      {
-        themeColor: currentColor,
-        themeFont: currentFont,
-      },
-      {
-        merge: true,
-      }
-    ).then(() => console.log("Document updated"));
-  }, [currentColor, currentFont, id]);
   return (
     <div>
       <div ref={navEl} className="sticky top-0 right-0 z-50">
@@ -239,14 +160,11 @@ const MainEditor = ({ id }) => {
             editEffects={editEffects}
             effects={effects}
             fonts={fonts}
-            currentFont={currentFont}
-            setCurrentFont={setCurrentFont}
+            currentFont={themeFont}
             fontEdit={fontEdit}
             openColors={colorsEdit}
-            mode={mode}
             colors={colors}
-            setCurrentColor={setCurrentColor}
-            currentColor={currentColor}
+            currentColor={themeColor}
           />
         ) : null}
         {editImg || editFiles ? (
@@ -260,27 +178,6 @@ const MainEditor = ({ id }) => {
         ) : null}
       </div>
 
-      {/* <iframe
-        style={{
-          width: containerWidth,
-          margin: "0px auto",
-          transition: "width 0.2s ease 0s",
-          display: editSections ? "block" : "none",
-          height: `calc(100vh - ${navHeight}px)`,
-        }}
-        src="https://themes-edit.vercel.app/"
-      />
-
-      <iframe
-        style={{
-          width: containerWidth,
-          margin: "0px auto",
-          transition: "width 0.2s ease 0s",
-          display: editSections ? "none" : "block",
-          height: `calc(100vh - ${navHeight}px)`,
-        }}
-        src="https://theme-preview-alpha.vercel.app/"
-      /> */}
       <div
         style={{
           maxWidth: containerWidth,

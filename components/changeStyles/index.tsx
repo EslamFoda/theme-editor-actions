@@ -5,27 +5,25 @@ import AllEffects from "./allEffects";
 import CloseEditor from "../mainEditor/common/closeEditor";
 import { doc } from "firebase/firestore";
 import { db } from "../../utlis/firebase";
+
 const ChangeStyles = ({
   currentEffect,
   setCurrentEffect,
   editEffects,
   effects,
   colors,
-  setCurrentColor,
-  mode,
   currentColor,
   openColors,
   fontEdit,
   fonts,
   currentFont,
-  setCurrentFont,
   themeId,
 }) => {
   const docRef = doc(db, "themes", themeId);
   return (
     <div className="bg-[#26313f] flex px-5 relative">
       <Bar
-      currentColor={currentColor}
+        currentColor={currentColor}
         openColors={openColors}
         fontEdit={fontEdit}
         currentFont={currentFont}
@@ -36,15 +34,13 @@ const ChangeStyles = ({
           colors?.map((color: string, i: number) => {
             return (
               <ColorPalettes
+                docRef={docRef}
                 key={i}
-                // docRef={docRef}
                 allPaltes
                 color={color}
                 colors={colors}
                 currentColor={currentColor}
                 i={i}
-                mode={mode}
-                setCurrentColor={setCurrentColor}
               />
             );
           })}
@@ -52,12 +48,12 @@ const ChangeStyles = ({
           ? fonts?.map((font, i) => {
               return (
                 <AllFonts
+                  docRef={docRef}
                   key={i}
                   fonts={fonts}
                   font={font}
                   currentFont={currentFont}
                   i={i}
-                  setCurrentFont={setCurrentFont}
                 />
               );
             })
@@ -77,7 +73,7 @@ const ChangeStyles = ({
             })
           : null}
       </div>
-      <CloseEditor  />
+      <CloseEditor />
     </div>
   );
 };
