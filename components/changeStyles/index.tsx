@@ -8,7 +8,6 @@ import { db } from "../../utlis/firebase";
 
 const ChangeStyles = ({
   currentEffect,
-  setCurrentEffect,
   editEffects,
   effects,
   colors,
@@ -62,12 +61,12 @@ const ChangeStyles = ({
           ? effects?.map((effect, i) => {
               return (
                 <AllEffects
+                  docRef={docRef}
                   effects={effects}
                   effect={effect}
                   i={i}
                   key={i}
                   currentEffect={currentEffect}
-                  setCurrentEffect={setCurrentEffect}
                 />
               );
             })

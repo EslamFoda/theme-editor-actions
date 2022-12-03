@@ -1,11 +1,10 @@
 import React from "react";
-
 import Container from "../../../ui/container";
-const Design4 = ({ choose = false }) => {
+
+const Design4 = () => {
   return (
     <>
-      {choose ? (
-        <div>
+        <div className="bg-white w-full h-full">
           <Container className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <div
               className={
@@ -18,13 +17,12 @@ const Design4 = ({ choose = false }) => {
                 accomplishments and any awards you have received Use this
                 section to showcase the features of your brand
               </p>
-              <button className="bg-red-500 p-[1px] text-small rounded-sm text-white">
+              <button className="bg-primary  p-[1px] px-2 text-small rounded-sm text-white">
                 more
               </button>
             </div>
           </Container>
         </div>
-      ) : null}
     </>
   );
 };

@@ -8,7 +8,6 @@ import SelectSection from "./common/selectSection";
 import DesignFromSection from "./common/DesignFromSection";
 import { sectionsImgs } from "../../constant";
 import ActionBarDesc from "./common/actionBarDesc";
-import { useStickyState } from "../../hooks/useStickyState";
 import ChangeImgs from "../changeImgs";
 import ChangeStyles from "../changeStyles";
 import CloseEditor from "./common/closeEditor";
@@ -60,8 +59,6 @@ const fonts = [
 
 const effects = ["no-animation", "fade-up", "zoom-in-up", "flip-up"];
 
-const modes = ["light", "dark"];
-
 const MainEditor = ({ id }) => {
   const {
     addSection,
@@ -76,17 +73,12 @@ const MainEditor = ({ id }) => {
     itemIndex,
     nextIndex,
     stylesEditing,
-    themeId,
     selectSection,
     themeColor,
     themeFont,
+    themeEffect,
   } = useMainData();
 
-  const [currentEffect, setCurrentEffect] = useStickyState(
-    effects[0],
-    "theme-effects"
-  );
-  const [mode, setMode] = useStickyState(modes[0], "theme-mode");
   const [navHeight, setNavHeight] = useState(0);
 
   const dispatch = useDispatch();
@@ -102,7 +94,7 @@ const MainEditor = ({ id }) => {
   });
 
   return (
-    <div>
+    <div className={`theme-${themeColor} theme-light`}>
       <div ref={navEl} className="sticky top-0 right-0 z-50">
         {id && (
           <ActionNavBar
@@ -155,8 +147,7 @@ const MainEditor = ({ id }) => {
         {stylesEditing && !addSection && editSections ? (
           <ChangeStyles
             themeId={id}
-            currentEffect={currentEffect}
-            setCurrentEffect={setCurrentEffect}
+            currentEffect={themeEffect}
             editEffects={editEffects}
             effects={effects}
             fonts={fonts}

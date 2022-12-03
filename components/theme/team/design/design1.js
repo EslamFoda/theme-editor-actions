@@ -6,18 +6,17 @@ import About from "../common/about";
 import Position from "../common/position";
 import { teamsData } from "../../../../constant";
 
-const Design1 = ({ choose }) => {
+const Design1 = () => {
   return (
-    <>
-      {choose ? (
+    <div className="bg-white w-full h-full">
         <Container className="py-0 pt-2">
           <div className="text-center space-y-1  mb-2">
-            <Title choose={choose} />
-            <SubTitle choose={choose} />
+            <Title  />
+            <SubTitle  />
           </div>
           <div
             className={
-              "grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 w-full"
+              "grid lg:grid-cols-4 gap-2 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 w-full"
             }
           >
             {teamsData?.map((team) => (
@@ -26,15 +25,14 @@ const Design1 = ({ choose }) => {
                   style={{ backgroundImage: `url(${team.img})` }}
                   className="bg-no-repeat bg-center bg-cover overflow-hidden m-auto h-5 w-5 rounded-full"
                 ></div>
-                <Name name={team.name} choose={choose} />
-                <Position position={team.position} choose={choose} />
-                <About about={team.about} choose={choose} />
+                <Name name={team.name}  />
+                <Position position={team.position}  />
+                <About about={team.about}  />
               </div>
             ))}
           </div>
         </Container>
-      ) : null}
-    </>
+    </div>
   );
 };
 

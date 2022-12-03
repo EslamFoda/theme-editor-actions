@@ -8,7 +8,8 @@ const SingleWebsite = ({ site, i }) => {
   return (
     <div
       key={site.id}
-      className="container m-auto flex items-center justify-between bg-white text-black drop-shadow-md w-full my-8 p-4"
+      style={{boxShadow:"0 1px 2px 1px hsla(0,0%,40%,.08)"}}
+      className="container m-auto flex items-center justify-between bg-white text-black w-full rounded-lg my-8 p-4"
     >
       <div className="flex gap-4 items-center">
         <Link href={`https://theme-preview-alpha.vercel.app/${site.id}`}>

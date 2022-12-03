@@ -5,16 +5,15 @@ import ServiceTitle from "../common/serviceTitle";
 import ServiceSubTilte from "../common/serviceSubTitle";
 import { servicesData } from "../../../../constant/";
 
-const Design2 = ({ choose }) => {
+const Design2 = () => {
   return (
-    <>
-      {choose ? (
+    <div className="bg-white w-full h-full">
         <Container className="py-2 ">
           <div
             className={"grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 mb-3"}
           >
-            <Title choose={choose} />
-            <SubTitle choose={choose} />
+            <Title  />
+            <SubTitle  />
           </div>
           <div
             className={
@@ -27,15 +26,14 @@ const Design2 = ({ choose }) => {
                   style={{ backgroundImage: `url(${service.imgUrl})` }}
                   className="bg-no-repeat bg-center bg-cover   h-12 w-full"
                 ></div>
-                <ServiceTitle choose={choose} title={service.title} />
-                <ServiceSubTilte choose={choose} subTitle={service.subTitle} />
-                <button className="text-red-600 text-small">READ MORE</button>
+                <ServiceTitle  title={service.title} />
+                <ServiceSubTilte  subTitle={service.subTitle} />
+                <button className="text-primary text-very-small">READ MORE</button>
               </div>
             ))}
           </div>
         </Container>
-      ) : null}
-    </>
+    </div>
   );
 };
 

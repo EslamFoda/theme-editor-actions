@@ -3,11 +3,10 @@ import Container from "../../../ui/container";
 import Title from "./common/title";
 import SubTitle from "./common/subTitle";
 import { testimonialsData } from "../../../../constant";
-const Design2 = ({ choose }) => {
+const Design2 = () => {
   return (
     <>
-      {choose ? (
-        <div>
+        <div className="bg-white w-full h-full">
           <Container className="p-1">
             <div className="text-center space-y-1 mb-2">
               <Title />
@@ -36,7 +35,6 @@ const Design2 = ({ choose }) => {
             </div>
           </Container>
         </div>
-      ) : null}
     </>
   );
 };

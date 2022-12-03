@@ -1,6 +1,6 @@
-const SubTitle = ({ choose,subTitle }) => {
+const SubTitle = ({ subTitle }) => {
   return (
-    <p className={choose ? "text-very-small" : ""}>
+    <p className={"text-very-small"}>
       {subTitle}
     </p>
   );

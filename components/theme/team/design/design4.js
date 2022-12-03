@@ -7,12 +7,11 @@ import Position from "../common/position";
 
 const Design4 = ({ choose }) => {
   return (
-    <>
-      {choose ? (
+    <div className="bg-white w-full h-full">
         <Container className="py-0 pt-2">
           <div className="text-center space-y-1  mb-2">
-            <Title choose={choose} />
-            <SubTitle choose={choose} />
+            <Title  />
+            <SubTitle />
           </div>
           <div
             className={
@@ -25,14 +24,13 @@ const Design4 = ({ choose }) => {
                   style={{ backgroundImage: `url(${team.img})` }}
                   className="bg-no-repeat bg-center bg-cover overflow-hidden m-auto h-5 w-5 rounded-full"
                 ></div>
-                <Name name={team.name} choose={choose} />
-                <Position position={team.position} choose={choose} />
+                <Name name={team.name}  />
+                <Position position={team.position} />
               </div>
             ))}
           </div>
         </Container>
-      ) : null}
-    </>
+    </div>
   );
 };
 

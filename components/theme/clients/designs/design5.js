@@ -3,16 +3,14 @@ import { clientsData } from "../../../../constant/";
 import Image from "next/image";
 import SubTitle from "../common/subTitle";
 
-const Design5 = ({ choose }) => {
+const Design5 = () => {
   return (
-    <>
-      {choose ? (
+    <div className="bg-white w-full h-full">
         <div className="grid lg:grid-cols-2 md:grid-cols-2  grid-cols-1 gap-1">
-          <div className="p-2  bg-purple-700  h-full">
-            <div className="h-28 flex justify-center  flex-col space-y-4 ">
-              <Title choose={choose} title={"Our Clients"} />
+          <div className="p-2  bg-gradient-to-b from-primary to-secondary  text-white  h-full">
+            <div className="h-28 flex justify-center  flex-col space-y-2 ">
+              <Title  title={"Our Clients"} />
               <SubTitle
-                choose={choose}
                 subTitle={
                   "Some of the world’s biggest brands trust us with their services"
                 }
@@ -37,8 +35,7 @@ const Design5 = ({ choose }) => {
             </div>
           </div>
         </div>
-      ) : null}
-    </>
+    </div>
   );
 };
 

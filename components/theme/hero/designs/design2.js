@@ -10,7 +10,7 @@ const Design2 = ({ choose = false }) => {
             className="h-20 py-16 "
             style={{
               backgroundImage:
-                "url(https://image.shutterstock.com/shutterstock/photos/2025365270/display_1500/stock-photo-beautiful-attractive-asia-lady-choosing-clothes-on-clothes-rack-dressing-looking-herself-in-mirror-2025365270.jpg)",
+                "url(https://images.unsplash.com/photo-1580197370215-38fdb17dfe8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1590&q=80)",
               backgroundSize: "cover",
               MozBackgroundSize: "center center",
               backgroundRepeat: "no-repeat",
@@ -24,7 +24,7 @@ const Design2 = ({ choose = false }) => {
                 <span className="block text-very-small">
                   Learn about our services and join our community today
                 </span>
-                <button className="w-full p-1 bg-blue-500 text-small">
+                <button className="w-full p-1 py-[2px] bg-primary text-white rounded-sm text-small">
                   shop now
                 </button>
               </div>

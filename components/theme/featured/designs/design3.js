@@ -7,12 +7,10 @@ import {
 } from "react-icons/hi";
 import { TbAsteriskSimple } from "react-icons/tb";
 
-const Design3 = ({ choose = false }) => {
+const Design3 = () => {
   const data = [
     {
-      icon: (
-        <HiOutlineSupport className="text-red-500" size={choose ? 5 : 15} />
-      ),
+      icon: <HiOutlineSupport className="text-secondary" size={5} />,
       title: "Professional Support",
       subTitle:
         "Our team works diligently to ensure that all your questions are answered and your needs met.",
@@ -20,7 +18,7 @@ const Design3 = ({ choose = false }) => {
       button: "Read More",
     },
     {
-      icon: <HiOutlineUsers className="text-red-500" size={choose ? 5 : 15} />,
+      icon: <HiOutlineUsers className="text-secondary" size={5} />,
       title: "Qualified Team",
       subTitle:
         "From designers to developers to writers, our team is equipped with a diverse set of skills.",
@@ -28,9 +26,7 @@ const Design3 = ({ choose = false }) => {
       button: "Read More",
     },
     {
-      icon: (
-        <HiOutlineBriefcase className="text-red-500" size={choose ? 5 : 15} />
-      ),
+      icon: <HiOutlineBriefcase className="text-secondary" size={5} />,
       title: "High Quality Work",
       subTitle:
         "All our work is executed with the highest degree of efficiency.",
@@ -38,9 +34,7 @@ const Design3 = ({ choose = false }) => {
       button: "Read More",
     },
     {
-      icon: (
-        <TbAsteriskSimple className="text-red-500" size={choose ? 5 : 15} />
-      ),
+      icon: <TbAsteriskSimple className="text-secondary" size={5} />,
       title: "Detail-oriented approach",
       subTitle:
         "We focus on every aspect of our clients’ needs to leave nothing to chance.",
@@ -51,32 +45,30 @@ const Design3 = ({ choose = false }) => {
 
   return (
     <>
-      {choose ? (
-        <div>
-          <Container className="absolute top-1/2 overflow-hidden left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="grid lg:grid-cols-3  sm:grid-cols-2   grid-cols-1 md-grid-cols-2 py-1  gap-1">
-              {data.map((card) => {
-                return (
-                  <div
-                    key={card.id}
-                    className="p-1 flex  flex-col space-y-1 items-start  "
-                  >
-                    <div className="flex flex-col gap-1">
-                      <div className="w-2 h-2 bg-red-200 rounded-full flex justify-center items-center">
-                        <div>{card.icon}</div>
-                      </div>
-                      <h3 className="text-very-small font-semibold">
-                        {card.title}
-                      </h3>
+      <div className="bg-white w-full h-full">
+        <Container className="absolute top-1/2 overflow-hidden left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="grid lg:grid-cols-3  sm:grid-cols-2   grid-cols-1 md-grid-cols-2 py-1  gap-1">
+            {data.map((card) => {
+              return (
+                <div
+                  key={card.id}
+                  className="p-1 flex  flex-col space-y-1 items-start  "
+                >
+                  <div className="flex flex-col gap-1">
+                    <div className="w-2 h-2 bg-primaryBg rounded-full flex justify-center items-center">
+                      <div>{card.icon}</div>
                     </div>
-                    <p className="text-very-small">{card.subTitle}</p>
+                    <h3 className="text-very-small font-semibold">
+                      {card.title}
+                    </h3>
                   </div>
-                );
-              })}
-            </div>
-          </Container>
-        </div>
-      ) : null}
+                  <p className="text-very-small">{card.subTitle}</p>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </div>
     </>
   );
 };

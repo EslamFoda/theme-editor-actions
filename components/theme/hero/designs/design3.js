@@ -1,25 +1,24 @@
 import React from "react";
-import Container from "../../../ui/container";
 const Design3 = ({ choose = false }) => {
   return (
     <>
       {choose ? (
-        <div className="bg-red-600 ">
-          <Container className="flex h-20 space-y-2 flex-col justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="bg-gradient-to-b from-primary to-secondary w-full h-full text-center flex items-center justify-center text-white">
+          <div>
             <h1 className="text-small">
               clothes is a leading business in the clothes industry
             </h1>
             <span className="text-very-small">
               Learn about our services and join our community today
             </span>
-            <div className="flex items-center gap-6">
-              <button className="bg-white p-1 text-small">Shop Now</button>
-              <button className="p-1 text-small border border-solid border-white">
+            <div className="flex justify-center mt-2 items-center gap-3">
+              <button className="bg-white text-primary rounded-sm p-1 px-2 text-very-small">Shop Now</button>
+              <button className="p-1 text-very-small border border-solid px-2 rounded-sm border-white">
                 Learn More
               </button>
             </div>
-          </Container>
-        </div>
+          </div>
+         </div>
       ) : null}
     </>
   );

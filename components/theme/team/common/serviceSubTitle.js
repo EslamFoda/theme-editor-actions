@@ -1,5 +1,5 @@
-const ServiceSubTilte = ({ subTitle, choose }) => {
-  return <p className={choose ? "text-very-small" : ""}>{subTitle}</p>;
+const ServiceSubTilte = ({ subTitle }) => {
+  return <p className={"text-very-small"}>{subTitle}</p>;
 };
 
 export default ServiceSubTilte;

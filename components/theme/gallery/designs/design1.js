@@ -5,14 +5,13 @@ import SubTitle from "../../services/common/subTitle";
 import { galleryDatas } from "../../../../constant/";
 import Image from "next/image";
 
-const Design1 = ({ choose }) => {
+const Design1 = () => {
   return (
-    <>
-      {choose ? (
+    <div className="bg-white w-full h-full">
         <Container className="py-0 pt-2">
           <div className="text-center space-y-1  mb-2">
-            <Title choose={choose} />
-            <SubTitle choose={choose} />
+            <Title  />
+            <SubTitle  />
           </div>
           <div
             className={
@@ -34,8 +33,7 @@ const Design1 = ({ choose }) => {
             ))}
           </div>
         </Container>
-      ) : null}
-    </>
+    </div>
   );
 };
 

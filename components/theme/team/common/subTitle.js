@@ -1,6 +1,6 @@
-const SubTitle = ({ choose }) => {
+const SubTitle = () => {
   return (
-    <p className={choose ? "text-very-small" : ""}>
+    <p className={"text-very-small" }>
       We’re led by a team who is always thinking, always creating, and always pushing forward.
     </p>
   );

@@ -1,6 +1,6 @@
-const Title = ({ choose, title }) => {
+const Title = ({  title }) => {
   return (
-    <h1 className={choose ? "text-small" : "text-2xl font-semibold"}>
+    <h1 className={"text-small"}>
       {title}
     </h1>
   );

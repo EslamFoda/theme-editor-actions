@@ -1,6 +1,6 @@
-const ServiceTitle = ({ title, choose }) => {
+const ServiceTitle = ({ title }) => {
   return (
-    <h3 className={choose ? "text-small" : "text-2xl font-semi-bold"}>
+    <h3 className={"text-small"}>
       {title}
     </h3>
   );

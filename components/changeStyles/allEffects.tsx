@@ -1,23 +1,29 @@
 import { FC } from "react";
 import ActiveIcon from "./activeIcon";
 import { FadeUp, Flip, NoAnimation, ZoomInUp } from "../icons";
+import { updateDoc } from "firebase/firestore";
 interface Props {
   effect: string;
   i: number;
   currentEffect: string;
-  setCurrentEffect: any;
+  // setCurrentEffect: any;
   effects: [];
+  docRef: any;
 }
 
 const AllEffects: FC<Props> = ({
   effect,
   i,
   currentEffect,
-  setCurrentEffect,
+  // setCurrentEffect,
   effects,
+  docRef,
 }) => {
-  const handleSelectEffect = () => {
-    setCurrentEffect(effects[i], "theme-effects");
+  const handleSelectEffect = async () => {
+    await updateDoc(docRef, {
+      themeEffect: effects[i],
+    });
+    // setCurrentEffect(effects[i], "theme-effects");
   };
   const effectsIcons = {
     0: NoAnimation,

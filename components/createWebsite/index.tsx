@@ -13,7 +13,10 @@ const CreateWebsite = ({ user }) => {
   const docRef = collection(db, "themes");
 
   return (
-    <div className="bg-white shadow-md w-full">
+    <div
+      style={{ boxShadow: "1px 0 3px 0 rgba(0,0,0,.3)" }}
+      className="bg-white  w-full"
+    >
       <div className="flex items-center justify-between container m-auto py-14">
         <div className="space-y-2 ">
           <h1 className="text-3xl text-[#1A1A1A] font-bold">
@@ -77,10 +80,10 @@ const CreateWebsite = ({ user }) => {
                             pic: "https://images.unsplash.com/photo-1580197370215-38fdb17dfe8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1590&q=80",
                           },
                           backgroundColor: {
-                            r: "255",
-                            g: "255",
-                            b: "255",
-                            a: "1",
+                            r: 255,
+                            g: 255,
+                            b: 255,
+                            a: 1,
                           },
                         },
                         {
@@ -93,10 +96,10 @@ const CreateWebsite = ({ user }) => {
                               "<span class='inline-block text-lg text-gray-400'>© All rights reserved</span>",
                           },
                           backgroundColor: {
-                            r: "255",
-                            g: "255",
-                            b: "255",
-                            a: "1",
+                            r: 255,
+                            g: 255,
+                            b: 255,
+                            a: 1,
                           },
                         },
                       ],
@@ -114,6 +117,7 @@ const CreateWebsite = ({ user }) => {
                       stylesEditing: false,
                       themeColor: "Captain-Green",
                       themeFont: "sans",
+                      themeEffect: "no-animation",
                       userId: user?.uid,
                       websiteInfo: {
                         webSiteName,

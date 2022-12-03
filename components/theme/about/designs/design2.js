@@ -1,11 +1,10 @@
 import React from "react";
 import Container from "../../../ui/container";
 
-const Design2 = ({ choose = false }) => {
+const Design2 = () => {
   return (
     <>
-      {choose ? (
-        <div className="">
+        <div className="bg-white w-full h-full">
           <Container className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <div className="grid lg:grid-cols-2 gap-2 grid-cols-1 sm:grid-cols-1">
               <div>
@@ -21,7 +20,6 @@ const Design2 = ({ choose = false }) => {
             </div>
           </Container>
         </div>
-      ) : null}
     </>
   );
 };

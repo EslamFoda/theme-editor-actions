@@ -3,7 +3,7 @@ const Design5 = ({ choose }) => {
   return (
     <div>
       {choose ? (
-        <div className="flex pt-6  flex-col justify-center items-center gap-2">
+        <div className="flex pt-6 bg-white flex-col justify-center items-center gap-2">
           <Container>
             <div className="grid pb-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 grid-cols-1  gap-1">
               <div>
@@ -15,10 +15,10 @@ const Design5 = ({ choose }) => {
                 </p>
               </div>
               <div className="flex flex-col lg:flex-row md:flex-col items-center w-full justify-center gap-1 ">
-                <button className="bg-red-500   w-full  text-white p-[1px] text-small">
+                <button className="bg-primary rounded-sm   w-full  text-white py-[2px] text-small">
                   Get in Touch
                 </button>
-                <button className=" border border-solid   w-full border-red-500 p-[1px] text-small">
+                <button className=" border border-solid rounded-sm  text-primary  w-full border-primary py-[2px] text-small">
                   learn more
                 </button>
               </div>
@@ -27,7 +27,7 @@ const Design5 = ({ choose }) => {
           <div
             style={{
               backgroundImage:
-                "url(https://image.shutterstock.com/shutterstock/photos/2025365270/display_1500/stock-photo-beautiful-attractive-asia-lady-choosing-clothes-on-clothes-rack-dressing-looking-herself-in-mirror-2025365270.jpg)",
+                "url(https://images.unsplash.com/photo-1580197370215-38fdb17dfe8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1590&q=80)",
               backgroundSize: "cover",
               MozBackgroundSize: "center center",
               backgroundRepeat: "no-repeat",

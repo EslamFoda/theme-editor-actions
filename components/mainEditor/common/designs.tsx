@@ -22,8 +22,8 @@ const Designs: React.FC<Props> = ({
       className={`h-32 relative rounded-md overflow-hidden  cursor-pointer min-w-[288px] ${
         // @ts-ignore
         select && comps[nextIndex].designNum === i + 1
-          ? "border-[#23cba5] border-4 border-solid  bg-white "
-          : "bg-white border-4 border-[#26313f]"
+          ? "border-[#23cba5] border-4 border-solid   "
+          : " border-4 border-[#26313f]"
       }`}
       onClick={() => {
         handle(i);

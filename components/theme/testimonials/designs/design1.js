@@ -1,12 +1,10 @@
 import Container from "../../../ui/container";
-
 import TestiGridData from "./common/testiGridData";
 import Title from "./common/title";
 import SubTitle from "./common/subTitle";
-const Design1 = ({ choose }) => {
+const Design1 = () => {
   return (
-    <>
-      {choose ? (
+    <div className="bg-white w-full h-full">
         <div>
           <Container className="p-1">
             <div className="text-center space-y-1 mb-4">
@@ -16,8 +14,7 @@ const Design1 = ({ choose }) => {
             <TestiGridData />
           </Container>
         </div>
-      ) : null}
-    </>
+    </div>
   );
 };
 

@@ -4,17 +4,15 @@ import { clientsData } from "../../../../constant/";
 import Image from "next/image";
 import SubTitle from "../common/subTitle";
 
-const Design4 = ({ choose }) => {
+const Design4 = () => {
   return (
-    <>
-      {choose ? (
+    <div className="bg-white w-full h-full">
         <Container className="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <div className="grid lg:grid-cols-3 md:grid-cols-3  grid-cols-1 gap-1">
             <div className="self-center">
               <div className="  space-y-4 ">
-                <Title choose={choose} title={"Our Clients"} />
+                <Title  title={"Our Clients"} />
                 <SubTitle
-                  choose={choose}
                   subTitle={
                     "Some of the world’s biggest brands trust us with their services"
                   }
@@ -40,8 +38,7 @@ const Design4 = ({ choose }) => {
             </div>
           </div>
         </Container>
-      ) : null}
-    </>
+    </div>
   );
 };
 

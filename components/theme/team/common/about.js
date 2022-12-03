@@ -1,6 +1,6 @@
-const About = ({ about, choose }) => {
+const About = ({ about }) => {
   return (
-    <p className={choose ? "text-very-small max-w-[50px]" : "text-sm"}>
+    <p className={"text-very-small"}>
       {about}
     </p>
   );
