@@ -7,7 +7,7 @@ const Design1 = ({
 }) => {
   
   return (
-    <>
+    <div className="bg-white w-full h-full">
       {choose ? (
         <div className=""></div>
       ) : (
@@ -32,7 +32,7 @@ const Design1 = ({
         //   </Container>
         // </div>
       )}
-    </>
+    </div>
   );
 };
 

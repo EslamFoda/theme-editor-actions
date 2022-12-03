@@ -4,7 +4,7 @@ const Design4 = ({ choose = false }) => {
   return (
     <>
       {
-        choose ? <div className=""></div> : null
+        choose ? <div className="bg-white w-full h-full"></div> : null
         // <div>
         //   <Container className="py-10 text-center">
         //     <div className="py-8">

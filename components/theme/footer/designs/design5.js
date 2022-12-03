@@ -2,7 +2,7 @@ import React from "react";
 
 const Design5 = ({ choose = false }) => {
   return (
-    <>
+    <div className='bg-white w-full h-full'>
       {choose ? (
         <div className=""></div>
       ) : null
@@ -43,7 +43,7 @@ const Design5 = ({ choose = false }) => {
       //   </Container>
       // </div>
       }
-    </>
+    </div>
   );
 };
 

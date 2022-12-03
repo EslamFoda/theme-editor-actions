@@ -10,7 +10,7 @@ const Design3 = ({
   return (
     <>
       {choose ? (
-        <div className=""></div>
+        <div className="bg-white w-full h-full"></div>
       ) : (
         null
         // <div>
