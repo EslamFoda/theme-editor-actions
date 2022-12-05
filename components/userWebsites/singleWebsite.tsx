@@ -2,16 +2,18 @@ import Link from "next/link";
 import { useRef } from "react";
 import EditBtn from "./editBtn";
 import { FaEye } from "react-icons/fa";
+import DeleteWebsite from "./deleteWebsite";
 const SingleWebsite = ({ site, i }) => {
   const frameRef = useRef(null);
+  console.log(site?.websiteInfo?.createdAt);
 
   return (
     <div
       key={site.id}
-      style={{boxShadow:"0 1px 2px 1px hsla(0,0%,40%,.08)"}}
-      className="container m-auto flex items-center justify-between bg-white text-black w-full rounded-lg my-8 p-4"
+      style={{ boxShadow: "0 1px 2px 1px hsla(0,0%,40%,.08)" }}
+      className="container m-auto flex lg:flex-row md:flex-row flex-col lg:items-center md:items-center items-start gap-2 justify-between bg-white text-black w-full rounded-lg my-8 p-4"
     >
-      <div className="flex gap-4 items-center">
+      <div className="flex lg:flex-row md:flex-row flex-col gap-4 lg:items-center md:items-center items-start">
         <Link href={`https://theme-preview-alpha.vercel.app/${site.id}`}>
           <a target="_blank">
             <div className="relative group">
@@ -33,16 +35,17 @@ const SingleWebsite = ({ site, i }) => {
           </a>
         </Link>
         <div className="space-y-2">
-          <h2 className="text-lg text-black/70 font-bold">
+          <h2 className="lg:text-lg md:text-lg text-md text-black/70 font-bold">
             {site.websiteInfo.webSiteName}
           </h2>
-          <h3 className="text-[#828181]">
-          It was created in{" "}
-            {new Date(site.websiteInfo.createdAt.toDate()).toDateString()}
+          <h3 className="text-[#828181] lg:text-base md:text-base text-xs">
+            It was created in{" "}
+            {new Date(site?.websiteInfo?.createdAt?.toDate()).toDateString()}
           </h3>
         </div>
       </div>
-      <div>
+      <div className="flex gap-8">
+        <DeleteWebsite site={site} />
         <EditBtn site={site} />
       </div>
     </div>

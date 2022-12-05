@@ -1,7 +1,5 @@
-import { doc, updateDoc } from "firebase/firestore";
+import { updateDoc } from "firebase/firestore";
 import { FC } from "react";
-import useMainData from "../../hooks/useMainData";
-import { db } from "../../utlis/firebase";
 import ActiveIcon from "./activeIcon";
 interface Props {
   colors?: [];
@@ -25,7 +23,7 @@ const ColorPalettes: FC<Props> = ({
 }) => {
   const className = allPaltes
     ? [
-        "h-full min-w-[220px] rounded-lg relative grid grid-cols-3  cursor-pointer",
+        "lg:h-full md:h-full h-[70px] lg:min-w-[220px] md:min-w-[220px] min-w-[160px] rounded-lg relative grid grid-cols-3  cursor-pointer",
         color && `theme-${color}`,
         `theme-light`,
         `${
@@ -36,7 +34,7 @@ const ColorPalettes: FC<Props> = ({
       ]
         .filter(Boolean)
         .join(" ")
-    : `h-[111px] relative border-[#23cba5] theme-${currentColor} theme-light rounded-lg border-[3px] border-solid grid grid-cols-3 w-full`;
+    : `lg:h-[111px] md:h-[111px] h-[70px]  relative border-[#23cba5] theme-${currentColor} theme-light rounded-lg border-[3px] border-solid grid grid-cols-3 lg:w-full md:w-full w-[140px]`;
 
   const handleSelectColors = async () => {
     allPaltes
@@ -53,7 +51,7 @@ const ColorPalettes: FC<Props> = ({
       <div className="bg-primary h-full w-full"></div>
       <div className="bg-secondary h-full w-full"></div>
       <div className="bg-white h-full w-full"></div>
-      <div className="absolute bottom-0 p-2 right-0 px-4 w-full bg-[#353f4b]">
+      <div className="absolute bottom-0 lg:p-2 md:p-2 p-[2px] lg:text-base md:text-base text-center text-xs right-0 px-4 w-full bg-[#353f4b]">
         {" "}
         <span className="text-white font-mono">{labels}</span>
       </div>

@@ -1,31 +1,30 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../utlis/firebase";
 import SingleWebsite from "./singleWebsite";
 
 const UserWebsites = ({ user }) => {
   const [sites, setSites] = useState([]);
+  const q = query(collection(db, "themes"), where("userId", "==", user?.uid));
+
   useEffect(() => {
-    const getAllWebsites = async () => {
-      const q = query(
-        collection(db, "themes"),
-        where("userId", "==", user?.uid)
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      setSites(
+        querySnapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
+        })
       );
-      const data = await getDocs(q);
-      console.log(data.docs);
-      setSites(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    if (user) {
-      getAllWebsites();
-    }
+    });
+
+    return () => unsubscribe();
   }, [user]);
 
   return (
-    <>
+    <div className="px-4">
       {sites?.map((site, i) => {
         return <SingleWebsite i={i} site={site} key={site.id} />;
       })}
-    </>
+    </div>
   );
 };
 

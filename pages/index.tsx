@@ -12,7 +12,7 @@ export default function Home() {
       <HomeNav user={user} />
       <div>
         <CreateWebsite user={user} />
-        <UserWebsites user={user} />
+        {user && <UserWebsites user={user} />}
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const ChangeStyles = ({
 }) => {
   const docRef = doc(db, "themes", themeId);
   return (
-    <div className="bg-[#26313f] flex px-5 relative">
+    <div className="bg-[#26313f] flex lg:flex-row md:flex-row flex-col px-5 relative">
       <Bar
         currentColor={currentColor}
         openColors={openColors}
@@ -28,7 +28,7 @@ const ChangeStyles = ({
         currentFont={currentFont}
         currentEffect={currentEffect}
       />
-      <div className="h-40 flex items-center gap-4 p-4  overflow-auto    w-full">
+      <div className="lg:h-40 md:h-40 h-28 overflow-y-hidden  border-t  border-solid border-[#353f4b]  flex items-center gap-4 lg:p-4 md:p-4 p-0  overflow-auto    w-full">
         {openColors &&
           colors?.map((color: string, i: number) => {
             return (

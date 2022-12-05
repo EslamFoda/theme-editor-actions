@@ -82,7 +82,7 @@ html {
   --color-primary-900: theme("colors.blue.900");
 }
 
-.theme-Custard-With-Mustard {
+.theme-Custard-Mustard {
   --color-primary-50: theme("colors.yellow.50");
   --color-primary-100: theme("colors.yellow.100");
   --color-primary-200: theme("colors.yellow.200");
@@ -1101,12 +1101,13 @@ button:hover .button-text {
 
 /** iframe viewer  **/
 .thumbnail-container {
-  width: calc(360px);
   height: calc(160px);
   display: inline-block;
   overflow: hidden;
   position: relative;
   background: #ffffff;
+
+  @apply lg:w-[360px] md:w-[360px] w-[252px] 
 }
 /* Image Icon for the Background */
 .thumbnail-container::before {
@@ -1136,8 +1137,8 @@ button:hover .button-text {
 /* This is our screen sizing */
 .thumbnail,
 .thumbnail iframe {
-  width: 1440px;
   height: 900px;
+  @apply lg:w-[1440px] md:w-[1440px] w-[1000px]
 }
 /* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
 .thumbnail iframe {
@@ -1164,7 +1165,11 @@ button:hover .button-text {
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+.AlertDialogOverlay{
+  background-color: rgba(0, 0, 0, 0.44);
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
 
+}
 .DialogContent {
   z-index: 110;
   background-color: white;

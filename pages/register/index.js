@@ -16,8 +16,9 @@ const Register = () => {
       console.log(user);
       push("/");
     } catch (error) {
-      console.log(error.message);
-      setError("this account is already in use");
+      const index = error.message.indexOf("auth");
+      const message = error.message.slice(index + 5, -2);
+      setError(message.split("-").join(" "));
     }
   };
 

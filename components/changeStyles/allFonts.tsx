@@ -21,7 +21,7 @@ const AllFonts: FC<Props> = ({ font, docRef, i, currentFont, fonts }) => {
       key={i}
       onClick={handleSelectFont}
       className={[
-        "h-full min-w-[220px] rounded-lg relative text-white p-4 font font-choosedFont  bg-[#353f4b]  cursor-pointer",
+        "lg:h-full md:h-full h-[70px] lg:min-w-[220px] md:min-w-[220px] min-w-[160px] rounded-lg relative text-white lg:p-4 md:p-4 p-2 font font-choosedFont  bg-[#353f4b]  cursor-pointer",
         currentFont && `fontName-${font}`,
 
         `${
@@ -34,8 +34,8 @@ const AllFonts: FC<Props> = ({ font, docRef, i, currentFont, fonts }) => {
         .join(" ")}
     >
       <div className="space-y-3">
-        <h3 className="text-lg font-black">Headline Font</h3>
-        <span className="block text-sm opacity-80">
+        <h3 className="lg:text-2xl md:text-2xl text-sm font-black">Headline Font</h3>
+        <span className="block lg:text-sm md:text-sm text-xs opacity-80">
           font for the rest of text
         </span>
       </div>

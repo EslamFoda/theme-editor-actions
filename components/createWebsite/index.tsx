@@ -4,7 +4,6 @@ import { db } from "../../utlis/firebase";
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -15,14 +14,14 @@ const CreateWebsite = ({ user }) => {
   return (
     <div
       style={{ boxShadow: "1px 0 3px 0 rgba(0,0,0,.3)" }}
-      className="bg-white  w-full"
+      className="bg-white px-4 w-full"
     >
-      <div className="flex items-center justify-between container m-auto py-14">
+      <div className="flex lg:flex-row md:flex-row flex-col gap-4 lg:items-center md:items-center items-start justify-between container m-auto lg:py-14 md:py-14 py-8">
         <div className="space-y-2 ">
-          <h1 className="text-3xl text-[#1A1A1A] font-bold">
+          <h1 className="lg:text-3xl md:text-2xl text-lg text-[#1A1A1A] font-bold">
             Manage your sites
           </h1>
-          <span className="block text-[rgba(0,0,0,.6)]">
+          <span className="block lg:text-base md:text-base text-xs text-[rgba(0,0,0,.6)]">
             From here you can manage / upgrade or modify your site settings
           </span>
         </div>
@@ -31,7 +30,7 @@ const CreateWebsite = ({ user }) => {
             <Dialog.Trigger asChild>
               <button
                 onClick={() => {}}
-                className="text-white bg-[#00a991] hover:bg-[#0ea08a] py-2 px-5 rounded-full"
+                className="text-white bg-[#00a991] hover:bg-[#0ea08a]  py-2 px-5 lg:text-base md:text-base text-xs rounded-full"
               >
                 Create New Website
               </button>

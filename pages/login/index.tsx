@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signInAnonymously } from "firebase/auth";
 import { auth } from "../../utlis/firebase";
 const Login = () => {
   const { push } = useRouter();
@@ -8,15 +8,25 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const handleLogin = async (e) => {
-    setError("")
+    setError("");
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
-      console.log(user);
       push("/");
     } catch (error) {
-     
-      setError("this user is not exist check your password and email address")
+      const index = error.message.indexOf("auth");
+      const message = error.message.slice(index + 5, -2);
+      setError(message.split("-").join(" "));
+    }
+  };
+  const logInAsGuest = async (e) => {
+    setError("");
+    e.preventDefault();
+    try {
+      const user = await signInAnonymously(auth);
+      push("/");
+    } catch (error) {
+      console.log(error.message);
     }
   };
   return (
@@ -48,7 +58,7 @@ const Login = () => {
               <input
                 onChange={(e) => {
                   setEmail(e.target.value);
-                  setError("")
+                  setError("");
                 }}
                 id="email-address"
                 name="email"
@@ -66,7 +76,7 @@ const Login = () => {
               <input
                 onChange={(e) => {
                   setPassword(e.target.value);
-                  setError("")
+                  setError("");
                 }}
                 id="password"
                 name="password"
@@ -93,13 +103,20 @@ const Login = () => {
             </div>
           </div>
 
-          <div>
+          <div className="space-y-2">
             <button
               onClick={handleLogin}
               type="submit"
               className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
               Sign in
+            </button>
+            <button
+              onClick={logInAsGuest}
+              type="submit"
+              className="group relative flex w-full justify-center rounded-md border border-solid border-indigo-600 py-2 px-4 text-sm font-medium text-indigo-600 hover:text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Sign in as guest
             </button>
             <p className="text-red-500 h-4 text-center mt-2 text-sm">{error}</p>
           </div>

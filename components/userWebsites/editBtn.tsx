@@ -11,9 +11,8 @@ const EditBtn = ({ site }) => {
       className="flex flex-col group items-center gap-2 justify-center cursor-pointer"
     >
       <svg
-        className="fill-[#4d5660] group-hover:fill-[#00a991]"
-        width="3em"
-        height="3em"
+        className="fill-[#4d5660] lg:w-[48px] lg:h-[48px] md:h-[48px] md:w-[48px] h-8 w-8 group-hover:fill-[#00a991]"
+       
         viewBox="0 0 512 512"
       >
         <g>
@@ -60,7 +59,7 @@ c-3.091,4.573-8.224,7.304-13.731,7.304c-9.127,0-16.553-7.425-16.553-16.553V400.7
           </g>
         </g>
       </svg>
-      <h1 className="text-lg text-[#4d5660] group-hover:text-[#00a991]">
+      <h1 className="lg:text-lg md:text-lg text-sm text-[#4d5660] group-hover:text-[#00a991]">
         Edit
       </h1>
     </div>

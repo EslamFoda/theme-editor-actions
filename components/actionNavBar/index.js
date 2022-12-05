@@ -13,19 +13,21 @@ const ActionNavBar = ({
   fontEdit,
   editEffects,
   colorsEdit,
-  editSections
+  editSections,
 }) => {
   const themeData = doc(db, "themes", themeId);
-  // const editSections = useSelector((state) => state.editSections.value);
   const device = useSelector((state) => state.mainWidth.device);
-  // const editFiles = useSelector((state) => state.files.editFiles);
   const dispatch = useDispatch();
   return (
     <>
       {" "}
-      <div className="bg-[#353f4b]   min-h-[65px] py-2 grid grid-cols-3 items-center">
+      <div className="bg-[#353f4b]  py-2 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 items-center">
         <div className="justify-self-start px-2  flex gap-3 items-center">
-          <PreviewEdit themeData={themeData} dispatch={dispatch} editSections={editSections} />
+          <PreviewEdit
+            themeData={themeData}
+            dispatch={dispatch}
+            editSections={editSections}
+          />
 
           <LookAndFeel
             themeData={themeData}
@@ -54,29 +56,31 @@ const ActionNavBar = ({
                     stylesEditing: false,
                     addSection: false,
                   });
-                  // dispatch(toggleEditFile());
-                  // dispatch(selectCompName(""));
-                  // dispatch(addSectionTurnOff());
-                  // dispatch(editImgOff());
-                  // dispatch(closeColors());
-                  // dispatch(editEffectsOff());
-                  // dispatch(fontEditOff());
-                  // dispatch(stylesEditorOff());
                 }}
               >
                 <div className="flex gap-2 rounded-sm bg-[#283340] cursor-pointer hover:bg-[hsla(0,0%,100%,.7)] hover:text-[#0a0a0a] p-2">
                   <IoImageOutline size={25} />
-                  <span className="font-semibold">Files</span>
+                  <span className="font-semibold hidden lg:block ">
+                    Files
+                  </span>
                 </div>
               </div>
             </Toggle.Root>
           ) : null}
         </div>
-        <div className="self-center justify-self-center">
-          <ChangeDevices themeData={themeData} dispatch={dispatch} device={device} />
+        <div className="self-center hidden lg:block  justify-self-center">
+          <ChangeDevices
+            themeData={themeData}
+            dispatch={dispatch}
+            device={device}
+          />
         </div>
         <div className="px-4 justify-self-end">
-          <Mode editSections={editSections} />
+          <Mode
+            editSections={editSections}
+            dispatch={dispatch}
+            device={device}
+          />
         </div>
       </div>
     </>

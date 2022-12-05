@@ -1,8 +1,7 @@
 export const FadeUp = () => {
   return (
     <svg
-      width="80"
-      height="80"
+    className="lg:w-[80px] lg:h-[80px] md:h-[80px] md:w-[80px] w-[30px] h-[30px]"
       viewBox="0 0 80 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -51,8 +50,7 @@ export const FadeUp = () => {
 export const ZoomInUp = () => {
   return (
     <svg
-      width="80"
-      height="80"
+    className="lg:w-[80px] lg:h-[80px] md:h-[80px] md:w-[80px] w-[30px] h-[30px]"
       viewBox="0 0 80 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -109,8 +107,7 @@ export const ZoomInUp = () => {
 export const Flip = () => {
   return (
     <svg
-      width="80"
-      height="80"
+    className="lg:w-[80px] lg:h-[80px] md:h-[80px] md:w-[80px] w-[30px] h-[30px]"
       viewBox="0 0 80 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -153,8 +150,7 @@ export const Flip = () => {
 export const NoAnimation = () => {
   return (
     <svg
-      width="80"
-      height="80"
+    className="lg:w-[80px] lg:h-[80px] md:h-[80px] md:w-[80px] w-[30px] h-[30px]"
       viewBox="0 0 80 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@ import { FaEdit, FaEye } from "react-icons/fa";
 const PreviewEdit = ({ editSections, themeData }) => {
   return (
     <div
-      className=" mx-4 justify-self-end cursor-pointer"
+      className=" lg:mx-4 md:mx-4 mx-2 justify-self-end cursor-pointer"
       onClick={async () => {
         await updateDoc(themeData, {
           editSections: !editSections,
@@ -17,23 +17,17 @@ const PreviewEdit = ({ editSections, themeData }) => {
           stylesEditing: false,
           addSection: false,
         });
-        // dispatch(toggleEdit());
-        // dispatch(addSectionTurnOff());
-        // dispatch(selectCompName(""));
-        // dispatch(closeColors());
-        // dispatch(filesOff());
-        // dispatch(editImgOff());
       }}
     >
       {editSections ? (
         <div className="flex text-[#98A2B3] hover:text-white items-center gap-3">
           <FaEye size={16} />
-          <span>preview</span>
+          <span className="hidden lg:block md:block">preview</span>
         </div>
       ) : (
         <div className="flex text-[#98A2B3] hover:text-white items-center gap-3">
           <FaEdit size={16} />
-          <span>edit</span>
+          <span className="hidden lg:block md:block">edit</span>
         </div>
       )}
     </div>

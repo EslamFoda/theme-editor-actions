@@ -6,13 +6,11 @@ import { doc, updateDoc } from "firebase/firestore";
 interface Props {
   selectSection: boolean;
   compName: string;
-  dispatch: any;
   themeId: string;
 }
 const ActionBarDesc: React.FC<Props> = ({
   selectSection,
   compName,
-  dispatch,
   themeId,
 }) => {
   const themeData = doc(db, "themes", themeId);
@@ -21,10 +19,9 @@ const ActionBarDesc: React.FC<Props> = ({
     await updateDoc(themeData, {
       selectSection: false,
     });
-    // dispatch(selectSectionOff());
   };
   return (
-    <div className="w-80 space-y-2  py-4 border-r mr-4 border-solid border-[#353f4b] h-[164px]">
+    <div className="w-80 space-y-2  py-4 border-r mr-4 border-solid border-[#353f4b] lg:h-[164px] md:h-[164px] h-[80px]">
       {selectSection ? (
         <>
           <h2
@@ -38,10 +35,10 @@ const ActionBarDesc: React.FC<Props> = ({
         </>
       ) : (
         <>
-          <h2 className="text-2xl  font-bold text-white">
+          <h2 className="lg:text-2xl md:text-2xl text-sm  font-bold text-white">
             Choose your section
           </h2>
-          <h5 className="text-white">choose on of them</h5>
+          <h5 className="text-white text-xs lg:text-base md:text-base">choose on of them</h5>
         </>
       )}
     </div>

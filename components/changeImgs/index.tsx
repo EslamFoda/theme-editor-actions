@@ -1,7 +1,6 @@
 import { RiImageAddLine } from "react-icons/ri";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-
 import * as Toast from "@radix-ui/react-toast";
 import { MdError, MdClose } from "react-icons/md";
 import { TfiTrash } from "react-icons/tfi";
@@ -9,19 +8,11 @@ import EmptyFiles from "./common/emptyFiles";
 import CloseEditor from "../mainEditor/common/closeEditor";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../utlis/firebase";
-const ChangeImgs = ({
-  comps,
-  themeId,
-  itemIndex,
-  compIndex,
-  editFiles,
-}) => {
+
+const ChangeImgs = ({ comps, themeId, itemIndex, compIndex, editFiles }) => {
   const [storedImgs, setStoredImgs] = useState([]);
   const themeData = doc(db, "themes", themeId);
   const [error, setError] = useState(false);
-  // const compIndex = useSelector((state: any) => state.editImg.compIndex);
-  // const itemIndex = useSelector((state: any) => state.editImg.itemIndex);
-  // const editFiles = useSelector((state: any) => state.files.editFiles);
 
   const bgSstyle = {
     backgroundImage:
@@ -31,7 +22,7 @@ const ChangeImgs = ({
   };
   const backgroundInput = useRef(null);
   const type = ["image/jpeg", "image/png"];
-  const changeHandler = async (e) => {
+  const uploadImg = async (e) => {
     setError(false);
     const selected = e.target.files[0];
     const reader = new FileReader();
@@ -97,9 +88,9 @@ const ChangeImgs = ({
         </Toast.Root>
         <Toast.Viewport className="ToastViewport" />
       </Toast.Provider>
-      <div className="bg-[#26313f] relative flex px-5">
+      <div className="bg-[#26313f] relative flex lg:flex-row md:flex-row flex-col px-5">
         {editFiles ? null : (
-          <div className="w-80 space-y-2 pr-6   py-4 border-r mr-4 border-solid border-[#353f4b] h-[164px]">
+          <div className="w-80 space-y-2 pr-6   py-4 border-r mr-4 border-solid border-[#353f4b] lg:h-[164px] md:h-[164px] h-[140px]">
             <div
               onClick={onButtonClick}
               className="h-full cursor-pointer group w-full rounded-md border border-solid flex items-center flex-col justify-center border-gray-500"
@@ -113,21 +104,21 @@ const ChangeImgs = ({
                 id="file"
                 style={{ display: "none" }}
                 ref={backgroundInput}
-                onChange={changeHandler}
+                onChange={uploadImg}
               />
-              <span className="text-[#868c96] text-xl group-hover:text-white">
+              <span className="text-[#868c96] lg:text-xl md:text-xl text-sm group-hover:text-white">
                 upload image
               </span>
             </div>
           </div>
         )}
-        <div className="h-40 flex items-center gap-4 p-4  overflow-auto  w-full">
+        <div className="h-40 border-t border-solid border-[#353f4b] flex items-center gap-4 lg:p-4 md:p-4 p-0  overflow-auto  w-full">
           {storedImgs.length ? (
             storedImgs.map((img, index) => {
               return (
                 <div
                   onClick={async () => {
-                    console.log(itemIndex)
+                    console.log(itemIndex);
                     if ((!editFiles && itemIndex) || itemIndex === 0) {
                       comps[compIndex].compData.items[itemIndex].pic = img;
 
@@ -143,14 +134,14 @@ const ChangeImgs = ({
                   }}
                   style={bgSstyle}
                   key={index}
-                  className="h-full min-w-[220px] group relative"
+                  className="lg:h-full md:h-full h-[90px] lg:min-w-[220px] md:min-w-[220px] min-w-[160px] group relative"
                 >
                   <Image
                     src={img}
                     layout="fill"
                     objectFit="contain"
                     className="absolute"
-                    alt='image file'
+                    alt="image file"
                   />
                   {editFiles ? (
                     <div

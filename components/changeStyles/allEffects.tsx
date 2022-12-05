@@ -6,7 +6,6 @@ interface Props {
   effect: string;
   i: number;
   currentEffect: string;
-  // setCurrentEffect: any;
   effects: [];
   docRef: any;
 }
@@ -15,7 +14,6 @@ const AllEffects: FC<Props> = ({
   effect,
   i,
   currentEffect,
-  // setCurrentEffect,
   effects,
   docRef,
 }) => {
@@ -23,7 +21,6 @@ const AllEffects: FC<Props> = ({
     await updateDoc(docRef, {
       themeEffect: effects[i],
     });
-    // setCurrentEffect(effects[i], "theme-effects");
   };
   const effectsIcons = {
     0: NoAnimation,
@@ -39,8 +36,7 @@ const AllEffects: FC<Props> = ({
       key={i}
       onClick={handleSelectEffect}
       className={[
-        "h-full min-w-[220px] rounded-lg relative text-white p-4 pr-1 font font-choosedFont  bg-[#353f4b]  cursor-pointer",
-
+        "lg:h-full md:h-full h-[70px] lg:min-w-[220px] md:min-w-[220px] min-w-[160px]  rounded-lg relative text-white p-4 pr-1 font font-choosedFont  bg-[#353f4b]  cursor-pointer",
         `${
           effect === currentEffect
             ? "border-[#23cba5] border-[3px] border-solid"
@@ -52,7 +48,7 @@ const AllEffects: FC<Props> = ({
     >
       <div className="flex items-center gap-4">
         <EffectIcon />
-        <h4>{effect.replace(/-/g, " ")}</h4>
+        <h4 className="lg:text-base md:text-base text-xs">{effect.replace(/-/g, " ")}</h4>
       </div>
       <ActiveIcon styles={effect} currentStyle={currentEffect} />
     </div>

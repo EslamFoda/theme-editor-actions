@@ -17,7 +17,7 @@ const colors = [
   "Captain-Green",
   "Masr",
   "Egyption-Blue",
-  "Custard-With-Mustard",
+  "Custard-Mustard",
   "Ron-Burgundy",
   "Baby-Blue",
   "Black-Panther",
@@ -116,19 +116,17 @@ const MainEditor = ({ id }) => {
           />
         )}
         {addSection && editSections && (
-          <div className="bg-[#26313f] flex px-5">
+          <div className="bg-[#26313f] flex lg:flex-row md:flex-row flex-col px-5">
             <ActionBarDesc
               selectSection={selectSection}
-              dispatch={dispatch}
               compName={compName}
               themeId={id}
             />
-            <div className="h-40 flex items-center gap-4  scrollable overflow-auto w-full">
+            <div className="h-40 border-t mr-4 border-solid border-[#353f4b] flex items-center gap-4  scrollable overflow-auto w-full">
               {selectSection ? (
                 <DesignFromSection
                   themeId={id}
                   designs={designs}
-                  // setComps={setComps}
                   compName={compName}
                   comps={comps}
                   nextIndex={nextIndex}
@@ -136,7 +134,6 @@ const MainEditor = ({ id }) => {
               ) : (
                 <SelectSection
                   themeId={id}
-                  dispatch={dispatch}
                   sectionsImgs={sectionsImgs}
                 />
               )}
