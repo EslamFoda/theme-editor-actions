@@ -7,7 +7,6 @@ const DeleteWebsite = ({ site }) => {
   const handleDeleteWebsite = async () => {
     try {
       const deletedDoc = await deleteDoc(docRef);
-      console.log(deletedDoc);
     } catch (error) {
       console.log(error.message);
     }

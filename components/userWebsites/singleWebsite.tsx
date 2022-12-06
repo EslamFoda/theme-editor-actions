@@ -5,7 +5,6 @@ import { FaEye } from "react-icons/fa";
 import DeleteWebsite from "./deleteWebsite";
 const SingleWebsite = ({ site, i }) => {
   const frameRef = useRef(null);
-  console.log(site?.websiteInfo?.createdAt);
 
   return (
     <div

@@ -5,7 +5,6 @@ const Website = () => {
   const {
     query: { id },
   } = useRouter();
-  console.log(id);
   return <>{id && <MainEditor id={id} />}</>;
 };
 

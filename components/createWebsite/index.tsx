@@ -68,6 +68,7 @@ const CreateWebsite = ({ user }) => {
                         {
                           id: Math.floor(Math.random() * Date.now()).toString(),
                           compName: "hero",
+                          totalDesigns: 5,
                           designNum: 1,
                           compData: {
                             title:
@@ -89,6 +90,7 @@ const CreateWebsite = ({ user }) => {
                           id: Math.floor(Math.random() * Date.now()).toString(),
                           compName: "footer",
                           designNum: 1,
+                          totalDesigns: 5,
                           compData: {
                             desc: "<p class='mb-5'>orem ipsum dolor sit amet, consectetuputate eros. Fusce imperdiet condimentum augue, ut ull</p>",
                             copyRight:
@@ -129,9 +131,7 @@ const CreateWebsite = ({ user }) => {
                     try {
                       const website = await addDoc(docRef, webData);
                       push(`/site/${website.id}`);
-                    } catch (error) {
-                      console.log(error);
-                    }
+                    } catch (error) {}
 
                     setSubmitting(false);
                   }}

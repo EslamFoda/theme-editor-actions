@@ -13,7 +13,6 @@ const Register = () => {
     setError("");
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(user);
       push("/");
     } catch (error) {
       const index = error.message.indexOf("auth");

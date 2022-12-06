@@ -4,6 +4,8 @@ import AboutDesign2 from "../components/theme/about/designs/design2";
 import AboutDesign3 from "../components/theme/about/designs/design3";
 import AboutDesign4 from "../components/theme/about/designs/design4";
 import AboutDesign5 from "../components/theme/about/designs/design5";
+import AboutDesign6 from "../components/theme/about/designs/design6";
+import AboutDesign7 from "../components/theme/about/designs/design7";
 import HeroDesign1 from "../components/theme/hero/designs/design1";
 import HeroDesign2 from "../components/theme/hero/designs/design2";
 import HeroDesign3 from "../components/theme/hero/designs/design3";
@@ -52,6 +54,8 @@ const useChooseDesign = (compName) => {
     AboutDesign3,
     AboutDesign4,
     AboutDesign5,
+    AboutDesign6,
+    AboutDesign7,
   ];
   const heroDesigns = [
     HeroDesign1,
@@ -106,7 +110,13 @@ const useChooseDesign = (compName) => {
     TestimonialsDesign5,
   ];
 
-  const FooterDesigns = [FooterDesign1,FooterDesign2,FooterDesign3,FooterDesign4,FooterDesign5];
+  const FooterDesigns = [
+    FooterDesign1,
+    FooterDesign2,
+    FooterDesign3,
+    FooterDesign4,
+    FooterDesign5,
+  ];
 
   const [designs, setDesigns] = useState(heroDesigns);
 

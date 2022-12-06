@@ -4,9 +4,7 @@ const Logout = () => {
   const logout = async () => {
     try {
       const userLogout = await signOut(auth);
-      console.log(userLogout);
     } catch (error) {
-      console.log(error);
     }
   };
   return (

@@ -81,9 +81,9 @@ const MainEditor = ({ id }) => {
 
   const [navHeight, setNavHeight] = useState(0);
 
-  const dispatch = useDispatch();
 
   const { designs } = useChooseDesign(compName);
+ 
   const containerWidth = useSelector((state: any) => state.mainWidth.width);
 
   const navEl = useRef(null);

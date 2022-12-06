@@ -11,12 +11,14 @@ const DesignFromSection = ({
 }) => {
   const { compData } = useCompData(compName);
   const themeData = doc(db, "themes", themeId);
+  console.log(designs);
 
   const handleCreateSection = async (i) => {
     // dispatch(selectSectionOff());
     comps.splice(nextIndex, 0, {
       id: Math.floor(Math.random() * Date.now()).toString(),
       compName: compName,
+      totalDesigns: designs.length,
       designNum: i + 1,
       compData: compData(),
       backgroundColor: {

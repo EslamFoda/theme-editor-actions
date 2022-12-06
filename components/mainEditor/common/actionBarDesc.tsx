@@ -18,6 +18,7 @@ const ActionBarDesc: React.FC<Props> = ({
     // @ts-ignore
     await updateDoc(themeData, {
       selectSection: false,
+      compName: "",
     });
   };
   return (
@@ -38,7 +39,9 @@ const ActionBarDesc: React.FC<Props> = ({
           <h2 className="lg:text-2xl md:text-2xl text-sm  font-bold text-white">
             Choose your section
           </h2>
-          <h5 className="text-white text-xs lg:text-base md:text-base">choose on of them</h5>
+          <h5 className="text-white text-xs lg:text-base md:text-base">
+            choose on of them
+          </h5>
         </>
       )}
     </div>
