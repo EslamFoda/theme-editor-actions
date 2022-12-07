@@ -232,12 +232,50 @@ const useCompData = (compName) => {
   };
 
   const pricesData = {
-    title:
-      "<h1 class='text-4xl font-semibold'>Get ready for a unique experience</h1>",
-    subTitle:
-      "<p>Get ready for a unique experience! Get ready for a unique experience!</p>",
-    primaryBtn: "<span>Start Now</span>",
-    secondaryBtn: "<span>Learn More</span>",
+    title: "<h1 class='text-4xl font-semibold'>pricing plans</h1>",
+    subTitle: "<p>14 days free trial on all packages</p>",
+    items: [
+      {
+        title: "<h5 class='text-xl font-semibold'>basic</h5>",
+        id: 1,
+        features:
+          "<p>✔ The first feature ✔ The second feature ✔ The third feature</p>",
+        btn: "<span>Read More</span>",
+        price: "<h3 class='text-5xl text-primary font-bold'>Free</h3>",
+        subTitle:
+          "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
+      },
+      {
+        title: "<h5 class='text-xl font-semibold'>personal</h5>",
+        id: 2,
+        features:
+          "<p>✔ The first feature ✔ The second feature ✔ The third feature </p>",
+        btn: "<span>Read More</span>",
+        price: "<h3 class='text-5xl text-primary font-bold'>$50</h3>",
+        subTitle:
+          "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
+      },
+      {
+        title: "<h5 class='text-xl font-semibold'>business</h5>",
+        id: 3,
+        features:
+          "<p>✔ The first feature ✔ The second feature ✔ The third feature ✔ The fourth feature</p>",
+        btn: "<span>Read More</span>",
+        price: "<h3 class='text-5xl text-primary font-bold'>$150</h3>",
+        subTitle:
+          "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
+      },
+      {
+        title: "<h5 class='text-xl font-semibold'>premium</h5>",
+        id: 4,
+        features:
+          "<p>✔ The first feature ✔ The second feature ✔ The third feature ✔ The fourth feature ✔ The fifth feature</p>",
+        btn: "<span>Read More</span>",
+        price: "<h3 class='text-5xl text-primary font-bold'>$250</h3>",
+        subTitle:
+          "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
+      },
+    ],
   };
 
   const compData = () => {
