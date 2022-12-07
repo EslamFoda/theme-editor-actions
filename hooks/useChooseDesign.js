@@ -53,6 +53,8 @@ import FooterDesign5 from "../components/theme/footer/designs/design5";
 import WorkDesign1 from "../components/theme/work/designs/design1";
 import WorkDesign2 from "../components/theme/work/designs/design2";
 import PricesDesign1 from "../components/theme/prices/designs/design1";
+import PricesDesign2 from "../components/theme/prices/designs/design2";
+import PricesDesign3 from "../components/theme/prices/designs/design3";
 
 const useChooseDesign = (compName) => {
   const aboutDesigns = [
@@ -129,8 +131,8 @@ const useChooseDesign = (compName) => {
     FooterDesign5,
   ];
 
-  const WorkDesigns = [WorkDesign1,WorkDesign2];
-  const PricesDesigns = [PricesDesign1];
+  const WorkDesigns = [WorkDesign1, WorkDesign2];
+  const PricesDesigns = [PricesDesign1, PricesDesign2, PricesDesign3];
 
   const [designs, setDesigns] = useState(heroDesigns);
 
