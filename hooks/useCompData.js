@@ -284,16 +284,19 @@ const useCompData = (compName) => {
     contacts: [
       {
         id: 1,
+        iconName:"email",
         title: "<h1 class='4xl font-semibold'>email</h1>",
         details: "<p>info@business.com</p>",
       },
       {
         id: 2,
+        iconName:"phone",
         title: "<h1 class='4xl font-semibold'>Phone</h1>",
         details: "<p>1(800) - 374 - 990</p>",
       },
       {
-        id: 1,
+        id: 3,
+        iconName:"address",
         title: "<h1 class='4xl font-semibold'>Address</h1>",
         details: "<p>301 W. 41st Street, Suite 501 Miami Beach, FL 33140</p>",
       },
