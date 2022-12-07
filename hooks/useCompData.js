@@ -278,6 +278,35 @@ const useCompData = (compName) => {
     ],
   };
 
+  const contactData = {
+    title: "<h1 class='text-4xl font-semibold'>Contact Us</h1>",
+    subTitle: "<p>Our team is always available to assist you.</p>",
+    contacts: [
+      {
+        id: 1,
+        title: "<h1 class='4xl font-semibold'>email</h1>",
+        details: "<p>info@business.com</p>",
+      },
+      {
+        id: 2,
+        title: "<h1 class='4xl font-semibold'>Phone</h1>",
+        details: "<p>1(800) - 374 - 990</p>",
+      },
+      {
+        id: 1,
+        title: "<h1 class='4xl font-semibold'>Address</h1>",
+        details: "<p>301 W. 41st Street, Suite 501 Miami Beach, FL 33140</p>",
+      },
+    ],
+    items: [
+      { inputType: "text", placeHolder: "Name", required: false, id: 1 },
+      { inputType: "email", placeHolder: "Email", required: false, id: 2 },
+      { inputType: "tel", placeHolder: "Phone", required: false, id: 3 },
+      { inputType: "text", placeHolder: "Address", required: false, id: 4 },
+      { inputType: "textarea", placeHolder: "Message", required: false, id: 5 },
+    ],
+  };
+
   const compData = () => {
     if (compName === "hero") {
       return heroData;
@@ -299,6 +328,8 @@ const useCompData = (compName) => {
       return inviteToWorkData;
     } else if (compName === "prices") {
       return pricesData;
+    } else if (compName === "contact") {
+      return contactData;
     }
   };
 

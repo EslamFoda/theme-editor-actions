@@ -55,7 +55,7 @@ import WorkDesign2 from "../components/theme/work/designs/design2";
 import PricesDesign1 from "../components/theme/prices/designs/design1";
 import PricesDesign2 from "../components/theme/prices/designs/design2";
 import PricesDesign3 from "../components/theme/prices/designs/design3";
-
+import ContactDesign1 from "../components/theme/contact/designs/design1";
 const useChooseDesign = (compName) => {
   const aboutDesigns = [
     AboutDesign1,
@@ -133,6 +133,7 @@ const useChooseDesign = (compName) => {
 
   const WorkDesigns = [WorkDesign1, WorkDesign2];
   const PricesDesigns = [PricesDesign1, PricesDesign2, PricesDesign3];
+  const ContactDesigns = [ContactDesign1];
 
   const [designs, setDesigns] = useState(heroDesigns);
 
@@ -159,6 +160,8 @@ const useChooseDesign = (compName) => {
       setDesigns(WorkDesigns);
     } else if (compName === "prices") {
       setDesigns(PricesDesigns);
+    } else if (compName === "contact") {
+      setDesigns(ContactDesigns);
     }
   };
 

@@ -28,6 +28,11 @@ export const sectionsImgs = [
     id: 9,
     title: "prices",
   },
+  {
+    src: "/assets/contact.png",
+    id: 10,
+    title: "contact",
+  },
 ];
 
 export const servicesData = [
