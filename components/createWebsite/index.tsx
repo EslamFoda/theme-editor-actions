@@ -68,7 +68,7 @@ const CreateWebsite = ({ user }) => {
                         {
                           id: Math.floor(Math.random() * Date.now()).toString(),
                           compName: "hero",
-                          totalDesigns: 5,
+                          totalDesigns: 7,
                           designNum: 1,
                           compData: {
                             title:

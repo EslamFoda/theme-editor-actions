@@ -11,6 +11,8 @@ import HeroDesign2 from "../components/theme/hero/designs/design2";
 import HeroDesign3 from "../components/theme/hero/designs/design3";
 import HeroDesign4 from "../components/theme/hero/designs/design4";
 import HeroDesign5 from "../components/theme/hero/designs/design5";
+import HeroDesign6 from "../components/theme/hero/designs/design6";
+import HeroDesign7 from "../components/theme/hero/designs/design7";
 import FeaturedDesign1 from "../components/theme/featured/designs/design1";
 import FeaturedDesign2 from "../components/theme/featured/designs/design2";
 import FeaturedDesign3 from "../components/theme/featured/designs/design3";
@@ -21,6 +23,7 @@ import ServiceDesign2 from "../components/theme/services/designs/design2";
 import ServiceDesign3 from "../components/theme/services/designs/design3";
 import ServiceDesign4 from "../components/theme/services/designs/design4";
 import ServiceDesign5 from "../components/theme/services/designs/design5";
+import ServiceDesign6 from "../components/theme/services/designs/design6";
 import TeamDesign1 from "../components/theme/team/design/design1";
 import TeamDesign2 from "../components/theme/team/design/design2";
 import TeamDesign3 from "../components/theme/team/design/design3";
@@ -41,11 +44,15 @@ import TestimonialsDesign2 from "../components/theme/testimonials/designs/design
 import TestimonialsDesign3 from "../components/theme/testimonials/designs/design3";
 import TestimonialsDesign4 from "../components/theme/testimonials/designs/design4";
 import TestimonialsDesign5 from "../components/theme/testimonials/designs/design5";
+import TestimonialsDesign6 from "../components/theme/testimonials/designs/design6";
 import FooterDesign1 from "../components/theme/footer/designs/design1";
 import FooterDesign2 from "../components/theme/footer/designs/design2";
 import FooterDesign3 from "../components/theme/footer/designs/design3";
 import FooterDesign4 from "../components/theme/footer/designs/design4";
 import FooterDesign5 from "../components/theme/footer/designs/design5";
+import WorkDesign1 from "../components/theme/work/designs/design1";
+import WorkDesign2 from "../components/theme/work/designs/design2";
+import PricesDesign1 from "../components/theme/prices/designs/design1";
 
 const useChooseDesign = (compName) => {
   const aboutDesigns = [
@@ -63,6 +70,8 @@ const useChooseDesign = (compName) => {
     HeroDesign3,
     HeroDesign4,
     HeroDesign5,
+    HeroDesign6,
+    HeroDesign7,
   ];
   const featuredDesigns = [
     FeaturedDesign1,
@@ -78,6 +87,7 @@ const useChooseDesign = (compName) => {
     ServiceDesign3,
     ServiceDesign4,
     ServiceDesign5,
+    ServiceDesign6,
   ];
 
   const teamDesigns = [
@@ -108,6 +118,7 @@ const useChooseDesign = (compName) => {
     TestimonialsDesign3,
     TestimonialsDesign4,
     TestimonialsDesign5,
+    TestimonialsDesign6,
   ];
 
   const FooterDesigns = [
@@ -117,6 +128,9 @@ const useChooseDesign = (compName) => {
     FooterDesign4,
     FooterDesign5,
   ];
+
+  const WorkDesigns = [WorkDesign1,WorkDesign2];
+  const PricesDesigns = [PricesDesign1];
 
   const [designs, setDesigns] = useState(heroDesigns);
 
@@ -139,6 +153,10 @@ const useChooseDesign = (compName) => {
       setDesigns(TestimonialsDesigns);
     } else if (compName === "footer") {
       setDesigns(FooterDesigns);
+    } else if (compName === "work") {
+      setDesigns(WorkDesigns);
+    } else if (compName === "prices") {
+      setDesigns(PricesDesigns);
     }
   };
 

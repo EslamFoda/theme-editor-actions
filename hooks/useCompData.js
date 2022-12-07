@@ -165,7 +165,7 @@ const useCompData = (compName) => {
     subTitle:
       "<p>Write about your businesses background, including your history, accomplishments and any awards you may have received. Use this section to show your brand’s personality.</p>",
     btn: "<span>Learn More</span>",
-    pic:"https://images.unsplash.com/photo-1483706571191-85c0c76b1947?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79d169c2bf199ce6912f72c20ec301e4&auto=format&fit=crop&w=500&q=80"
+    pic: "https://images.unsplash.com/photo-1483706571191-85c0c76b1947?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79d169c2bf199ce6912f72c20ec301e4&auto=format&fit=crop&w=500&q=80",
   };
 
   const galleryData = {
@@ -222,6 +222,24 @@ const useCompData = (compName) => {
     ],
   };
 
+  const inviteToWorkData = {
+    title:
+      "<h1 class='text-4xl font-semibold'>Get ready for a unique experience</h1>",
+    subTitle:
+      "<p>Get ready for a unique experience! Get ready for a unique experience!</p>",
+    primaryBtn: "<span>Start Now</span>",
+    secondaryBtn: "<span>Learn More</span>",
+  };
+
+  const pricesData = {
+    title:
+      "<h1 class='text-4xl font-semibold'>Get ready for a unique experience</h1>",
+    subTitle:
+      "<p>Get ready for a unique experience! Get ready for a unique experience!</p>",
+    primaryBtn: "<span>Start Now</span>",
+    secondaryBtn: "<span>Learn More</span>",
+  };
+
   const compData = () => {
     if (compName === "hero") {
       return heroData;
@@ -239,6 +257,10 @@ const useCompData = (compName) => {
       return galleryData;
     } else if (compName === "clients") {
       return clientsData;
+    } else if (compName === "work") {
+      return inviteToWorkData;
+    } else if (compName === "prices") {
+      return pricesData;
     }
   };
 

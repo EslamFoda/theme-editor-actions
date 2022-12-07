@@ -18,6 +18,16 @@ export const sectionsImgs = [
     id: 7,
     title: "testimonials",
   },
+  {
+    src: "/assets/work.png",
+    id: 8,
+    title: "work",
+  },
+  {
+    src: "/assets/price.png",
+    id: 9,
+    title: "prices",
+  },
 ];
 
 export const servicesData = [

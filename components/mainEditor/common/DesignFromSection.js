@@ -14,7 +14,6 @@ const DesignFromSection = ({
   console.log(designs);
 
   const handleCreateSection = async (i) => {
-    // dispatch(selectSectionOff());
     comps.splice(nextIndex, 0, {
       id: Math.floor(Math.random() * Date.now()).toString(),
       compName: compName,

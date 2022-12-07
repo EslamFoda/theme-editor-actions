@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../utlis/firebase";
@@ -13,7 +12,7 @@ const SelectSection = ({ sectionsImgs, themeId }) => {
           onClick={async () => {
             await updateDoc(themeData, {
               compName: title,
-              selectSection:true
+              selectSection: true,
             });
           }}
         >
@@ -26,7 +25,9 @@ const SelectSection = ({ sectionsImgs, themeId }) => {
                 layout="fill"
               />
             </div>
-            <h5 className="text-white text-xs lg:text-base md:text-base">{title}</h5>
+            <h5 className="text-white text-xs lg:text-base md:text-base">
+              {title === "work" ? "invite to work" : title}
+            </h5>
           </div>
         </div>
       ))}
