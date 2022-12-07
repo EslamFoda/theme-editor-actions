@@ -241,7 +241,7 @@ const useCompData = (compName) => {
         features:
           "<p>✔ The first feature ✔ The second feature ✔ The third feature</p>",
         btn: "<span>Read More</span>",
-        price: "<h3 class='text-5xl text-primary font-bold'>Free</h3>",
+        price: "<h1 class='text-5xl text-primary font-bold'>Free</h1>",
         subTitle:
           "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
       },
@@ -251,7 +251,7 @@ const useCompData = (compName) => {
         features:
           "<p>✔ The first feature ✔ The second feature ✔ The third feature </p>",
         btn: "<span>Read More</span>",
-        price: "<h3 class='text-5xl text-primary font-bold'>$50</h3>",
+        price: "<h1 class='text-5xl text-primary font-bold'>$50</h1>",
         subTitle:
           "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
       },
@@ -261,7 +261,7 @@ const useCompData = (compName) => {
         features:
           "<p>✔ The first feature ✔ The second feature ✔ The third feature ✔ The fourth feature</p>",
         btn: "<span>Read More</span>",
-        price: "<h3 class='text-5xl text-primary font-bold'>$150</h3>",
+        price: "<h1 class='text-5xl text-primary font-bold'>$150</h1>",
         subTitle:
           "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
       },
@@ -271,7 +271,7 @@ const useCompData = (compName) => {
         features:
           "<p>✔ The first feature ✔ The second feature ✔ The third feature ✔ The fourth feature ✔ The fifth feature</p>",
         btn: "<span>Read More</span>",
-        price: "<h3 class='text-5xl text-primary font-bold'>$250</h3>",
+        price: "<h1 class='text-5xl text-primary font-bold'>$250</h1>",
         subTitle:
           "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
       },

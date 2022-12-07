@@ -72,7 +72,7 @@ const CreateWebsite = ({ user }) => {
                           designNum: 1,
                           compData: {
                             title:
-                              "<h1 class='text-4xl  mb-5'>clothes is a leading business in the clothes industry</h1>",
+                              "<h1 class='text-4xl'>clothes is a leading business in the clothes industry</h1>",
                             subTitle:
                               "<span class='tinymce-header'>Learn about our services and join our community today </span>",
                             primaryBtn: "<span>shop now</span>",
