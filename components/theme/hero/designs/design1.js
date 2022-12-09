@@ -18,7 +18,7 @@ const Design1 = ({ choose = false }) => {
                 <button className="bg-white text-very-small flex-1 py-[3px] text-primary  ">
                   shop now
                 </button>
-                <button className="flex-1 text-very-small text-white border border-solid  border-white ">
+                <button className="flex-1 text-very-small text-white border py-[3px] border-solid  border-white ">
                   learn more
                 </button>
               </div>

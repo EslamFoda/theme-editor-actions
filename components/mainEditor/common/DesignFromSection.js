@@ -11,7 +11,6 @@ const DesignFromSection = ({
 }) => {
   const { compData } = useCompData(compName);
   const themeData = doc(db, "themes", themeId);
-  console.log(designs);
 
   const handleCreateSection = async (i) => {
     comps.splice(nextIndex, 0, {

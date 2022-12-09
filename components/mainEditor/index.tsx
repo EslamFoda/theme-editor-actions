@@ -122,7 +122,7 @@ const MainEditor = ({ id }) => {
               compName={compName}
               themeId={id}
             />
-            <div className="h-40 border-t mr-4 border-solid border-[#353f4b] flex items-center gap-4  scrollable overflow-auto w-full">
+            <div className="lg:h-40 md:h-40 h-32 border-t mr-4 border-solid border-[#353f4b] flex items-center gap-4  scrollable overflow-auto w-full">
               {selectSection ? (
                 <DesignFromSection
                   themeId={id}

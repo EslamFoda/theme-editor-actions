@@ -30,9 +30,10 @@ const Design5 = ({ choose }) => {
                 "url(https://images.unsplash.com/photo-1580197370215-38fdb17dfe8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1590&q=80)",
               backgroundSize: "cover",
               MozBackgroundSize: "center center",
+              backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
-            className="h-20  w-full"
+            className="h-24 w-full"
           ></div>
         </div>
       ) : null}

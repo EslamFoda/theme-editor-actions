@@ -19,7 +19,7 @@ const Designs: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={`h-32 relative rounded-md overflow-hidden  cursor-pointer min-w-[288px] ${
+      className={`lg:h-32 md:h-32 h-24 relative rounded-md overflow-hidden  cursor-pointer lg:min-w-[288px] md:min-w-[288px] min-w-[230px] ${
         // @ts-ignore
         select && comps[nextIndex].designNum === i + 1
           ? "border-[#23cba5] border-4 border-solid   "

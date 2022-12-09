@@ -13,7 +13,7 @@ const SelectDesign = ({ designs, comps, nextIndex, themeId }) => {
 
   return (
     <div className="bg-[#26313f] relative px-5">
-      <div className="h-40 flex items-center   overflow-auto gap-8  w-full">
+      <div className="lg:h-40 md:h-40 h-32 flex items-center   overflow-auto gap-8  w-full">
         {designs.map((Design, i) => (
           <div key={i}>
             <Designs

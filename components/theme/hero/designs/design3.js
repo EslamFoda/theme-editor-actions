@@ -11,7 +11,7 @@ const Design3 = ({ choose = false }) => {
             <span className="text-very-small">
               Learn about our services and join our community today
             </span>
-            <div className="flex justify-center mt-2 items-center gap-3">
+            <div className="flex justify-center mt-2 items-center gap-1">
               <button className="bg-white text-primary rounded-sm p-1 px-2 text-very-small">Shop Now</button>
               <button className="p-1 text-very-small border border-solid px-2 rounded-sm border-white">
                 Learn More

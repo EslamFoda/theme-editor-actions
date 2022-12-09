@@ -169,3 +169,44 @@ export const testimonialsData = [
       "“Avivo has been wonderful. They have the best customer service and always go above and beyond to answer my questions and make sure my needs are met.”",
   },
 ];
+
+export const pricesData = [
+  {
+    title: "basic",
+    id: 1,
+    subTitle:
+      "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
+    price: "Free",
+    btn: "Read More",
+    features: "✔ The first feature ✔ The second feature ✔ The third feature",
+  },
+  {
+    title: "personal",
+    id: 2,
+    subTitle:
+      "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
+    price: "$50",
+    btn: "Read More",
+    features: "✔ The first feature ✔ The second feature ✔ The third feature",
+  },
+  {
+    title: "business",
+    id: 3,
+    subTitle:
+      "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
+    price: "$150",
+    btn: "Read More",
+    features:
+      "✔ The first feature ✔ The second feature ✔ The third feature ✔ The fourth feature",
+  },
+  {
+    title: "premium",
+    id: 4,
+    subTitle:
+      "This text is an example to help you explain your prices and the benefits and advantages customers will get for these prices. Try to be as direct, clear and concise as possible.",
+    price: "$250",
+    btn: "Read More",
+    features:
+      "✔ The first feature ✔ The second feature ✔ The third feature ✔ The fourth feature ✔ The fifth feature",
+  },
+];

@@ -1,9 +1,5 @@
 import Container from "../../../ui/container";
-const Design4 = ({
-  choose,
-}) => {
-  
-
+const Design4 = ({ choose }) => {
   return (
     <div>
       {choose ? (
@@ -16,7 +12,7 @@ const Design4 = ({
               <p className=" text-very-small">
                 Learn about our services and join our community today
               </p>
-              <div className="flex items-center w-full  justify-center gap-4 ">
+              <div className="flex items-center w-full  justify-center gap-1 ">
                 <button className="bg-primary rounded-sm text-very-small text-white py-[2px] px-2">
                   Get in Touch
                 </button>
@@ -30,11 +26,11 @@ const Design4 = ({
                 backgroundImage:
                   "url(https://images.unsplash.com/photo-1580197370215-38fdb17dfe8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1590&q=80)",
                 backgroundSize: "cover",
-                backgroundPosition:"center",
+                backgroundPosition: "center",
                 MozBackgroundSize: "center center",
                 backgroundRepeat: "no-repeat",
               }}
-              className="h-16 mt-2  w-4/5"
+              className="h-24 mt-2  w-4/5"
             ></div>
           </div>
         </div>
