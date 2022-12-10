@@ -81,9 +81,8 @@ const MainEditor = ({ id }) => {
 
   const [navHeight, setNavHeight] = useState(0);
 
-
   const { designs } = useChooseDesign(compName);
- 
+
   const containerWidth = useSelector((state: any) => state.mainWidth.width);
 
   const navEl = useRef(null);
@@ -98,6 +97,7 @@ const MainEditor = ({ id }) => {
       <div ref={navEl} className="sticky top-0 right-0 z-50">
         {id && (
           <ActionNavBar
+            stylesEditing={stylesEditing}
             editSections={editSections}
             fontEdit={fontEdit}
             editEffects={editEffects}
@@ -132,10 +132,7 @@ const MainEditor = ({ id }) => {
                   nextIndex={nextIndex}
                 />
               ) : (
-                <SelectSection
-                  themeId={id}
-                  sectionsImgs={sectionsImgs}
-                />
+                <SelectSection themeId={id} sectionsImgs={sectionsImgs} />
               )}
             </div>
             <CloseEditor />

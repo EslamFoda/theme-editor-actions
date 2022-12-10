@@ -19,6 +19,7 @@ const DesignFromSection = ({
       totalDesigns: designs.length,
       designNum: i + 1,
       compData: compData(),
+      backgroundImage: "",
       backgroundColor: {
         r: 255,
         g: 255,

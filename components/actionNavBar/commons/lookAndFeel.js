@@ -12,9 +12,6 @@ const LookAndFeel = ({
   editEffects,
   colorsEdit,
 }) => {
-  // const fontEdit = useSelector((state) => state.stylesEdit.fontEdit);
-  // const editEffects = useSelector((state) => state.stylesEdit.editEffects);
-  // const colorsEdit = useSelector((state) => state.colors.enableColors);
   const [value, setValue] = useState(null);
   useEffect(() => {
     if (!fontEdit && !editEffects && !colorsEdit) {
@@ -38,26 +35,16 @@ const LookAndFeel = ({
           stylesEditing: true,
           addSection: false,
         });
-        // dispatch(closeColors());
-        // dispatch(selectCompName(""));
-        // dispatch(addSectionTurnOff());
-        // dispatch(editImgOff());
-        // dispatch(filesOff());
-        // dispatch(fontEditOff());
-        // dispatch(stylesEditorOn());
-        // dispatch(editEffectsOn());
+
         if (editEffects) {
           await updateDoc(themeData, {
             editEffects: false,
             stylesEditing: false,
           });
-          // dispatch(editEffectsOff());
-          // dispatch(stylesEditorOff());
         } else {
           await updateDoc(themeData, {
             stylesEditing: true,
           });
-          // dispatch(stylesEditorOn());
         }
       },
     },
@@ -77,26 +64,16 @@ const LookAndFeel = ({
           stylesEditing: true,
           addSection: false,
         });
-        // dispatch(closeColors());
-        // dispatch(selectCompName(""));
-        // dispatch(addSectionTurnOff());
-        // dispatch(editImgOff());
-        // dispatch(filesOff());
-        // dispatch(fontEditOn());
-        // dispatch(editEffectsOff());
-        // dispatch(stylesEditorOn());
+
         if (fontEdit) {
           await updateDoc(themeData, {
             fontEdit: false,
             stylesEditing: false,
           });
-          // dispatch(fontEditOff());
-          // dispatch(stylesEditorOff());
         } else {
           await updateDoc(themeData, {
             stylesEditing: true,
           });
-          // dispatch(stylesEditorOn());
         }
       },
     },
@@ -116,26 +93,16 @@ const LookAndFeel = ({
           stylesEditing: true,
           addSection: false,
         });
-        // dispatch(openColors());
-        // dispatch(fontEditOff());
-        // dispatch(selectCompName(""));
-        // dispatch(addSectionTurnOff());
-        // dispatch(editImgOff());
-        // dispatch(filesOff());
-        // dispatch(editEffectsOff());
-        // dispatch(stylesEditorOn());
+
         if (colorsEdit) {
           await updateDoc(themeData, {
             colorsEdit: false,
             stylesEditing: false,
           });
-          // dispatch(stylesEditorOff());
-          // dispatch(closeColors());
         } else {
           await updateDoc(themeData, {
             stylesEditing: true,
           });
-          // dispatch(stylesEditorOn());
         }
       },
     },

@@ -1,6 +1,6 @@
 import { updateDoc } from "firebase/firestore";
 import { FC } from "react";
-import ActiveIcon from "./activeIcon";
+import ActiveIcon from "../activeIcon";
 interface Props {
   colors?: [];
   i?: number;

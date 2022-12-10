@@ -1,6 +1,6 @@
 import { MdOutlineDone } from "react-icons/md";
 import { useEffect } from "react";
-import { FadeUp, Flip, NoAnimation, ZoomInUp } from "../icons";
+import { FadeUp, Flip, NoAnimation, ZoomInUp } from "../../icons";
 const CurrentEffect = ({ currentEffect }) => {
   const effectIcon = () => {
     if (currentEffect === "fade-up") {

@@ -7,26 +7,35 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [loadingGuest, setLoadingGuest] = useState(false);
   const handleLogin = async (e) => {
+    setLoading(true);
     setError("");
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);
+      setLoading(false);
+
       push("/");
     } catch (error) {
       const index = error.message.indexOf("auth");
       const message = error.message.slice(index + 5, -2);
       setError(message.split("-").join(" "));
+      setLoading(false);
     }
   };
   const logInAsGuest = async (e) => {
     setError("");
+    setLoadingGuest(true);
     e.preventDefault();
     try {
       const user = await signInAnonymously(auth);
+      setLoadingGuest(false);
       push("/");
     } catch (error) {
       console.log(error.message);
+      setLoadingGuest(false);
     }
   };
   return (
@@ -105,18 +114,24 @@ const Login = () => {
 
           <div className="space-y-2">
             <button
+              disabled={loading}
               onClick={handleLogin}
               type="submit"
-              className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className={`${
+                loading ? "cursor-not-allowed opacity-60" : ""
+              } group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
             >
-              Sign in
+              {loading ? "Signing in" : "Sign in"}
             </button>
             <button
+              disabled={loadingGuest}
               onClick={logInAsGuest}
               type="submit"
-              className="group relative flex w-full justify-center rounded-md border border-solid border-indigo-600 py-2 px-4 text-sm font-medium text-indigo-600 hover:text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className={`${
+                loadingGuest ? "bg-indigo-700 text-white opacity-60" : ""
+              } group relative flex w-full justify-center rounded-md border border-solid border-indigo-600 py-2 px-4 text-sm font-medium text-indigo-600 hover:text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2`}
             >
-              Sign in as guest
+              {loadingGuest ? "Signing in as guest" : "Sign in as guest"}
             </button>
             <p className="text-red-500 h-4 text-center mt-2 text-sm">{error}</p>
           </div>

@@ -14,6 +14,7 @@ const ActionNavBar = ({
   editEffects,
   colorsEdit,
   editSections,
+  stylesEditing
 }) => {
   const themeData = doc(db, "themes", themeId);
   const device = useSelector((state) => state.mainWidth.device);
@@ -29,7 +30,8 @@ const ActionNavBar = ({
             editSections={editSections}
           />
 
-          <LookAndFeel
+          <LookAndFeel 
+          stylesEditing={stylesEditing}
             themeData={themeData}
             dispatch={dispatch}
             editSections={editSections}

@@ -1,7 +1,7 @@
-import ColorPalettes from "./colorPallates";
-import FontStyle from "./fontStyle";
+import ColorPalettes from "./colors/colorPallates";
+import FontStyle from "./fonts/fontStyle";
 import TextBar from "./textBar";
-import CurrentEffect from "./currentEffect";
+import CurrentEffect from "./effects/currentEffect";
 interface Props {
   openColors: boolean;
   fontEdit: boolean;

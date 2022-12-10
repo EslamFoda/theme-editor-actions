@@ -1,6 +1,6 @@
 import { FC } from "react";
-import ActiveIcon from "./activeIcon";
-import { FadeUp, Flip, NoAnimation, ZoomInUp } from "../icons";
+import ActiveIcon from "../activeIcon";
+import { FadeUp, Flip, NoAnimation, ZoomInUp } from "../../icons";
 import { updateDoc } from "firebase/firestore";
 interface Props {
   effect: string;
