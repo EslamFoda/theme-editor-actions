@@ -77,6 +77,7 @@ const MainEditor = ({ id }) => {
     themeColor,
     themeFont,
     themeEffect,
+    bgImg
   } = useMainData();
 
   const [navHeight, setNavHeight] = useState(0);
@@ -153,7 +154,8 @@ const MainEditor = ({ id }) => {
           />
         ) : null}
         {editImg || editFiles ? (
-          <ChangeImgs
+          <ChangeImgs 
+          bgImg={bgImg}
             editFiles={editFiles}
             itemIndex={itemIndex}
             compIndex={nextIndex}

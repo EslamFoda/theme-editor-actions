@@ -9,7 +9,8 @@ import CloseEditor from "../mainEditor/common/closeEditor";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../utlis/firebase";
 
-const ChangeImgs = ({ comps, themeId, itemIndex, compIndex, editFiles }) => {
+const ChangeImgs = (props) => {
+  const { comps, themeId, itemIndex, compIndex, editFiles, bgImg } = props;
   const [storedImgs, setStoredImgs] = useState([]);
   const themeData = doc(db, "themes", themeId);
   const [error, setError] = useState(false);
@@ -118,18 +119,24 @@ const ChangeImgs = ({ comps, themeId, itemIndex, compIndex, editFiles }) => {
               return (
                 <div
                   onClick={async () => {
-                    console.log(itemIndex);
-                    if ((!editFiles && itemIndex) || itemIndex === 0) {
-                      comps[compIndex].compData.items[itemIndex].pic = img;
+                    if (bgImg) {
+                      comps[compIndex].selectedBgImg = img;
+                      await updateDoc(themeData, {
+                        allSections: [...comps],
+                      });
+                    } else {
+                      if ((!editFiles && itemIndex) || itemIndex === 0) {
+                        comps[compIndex].compData.items[itemIndex].pic = img;
 
-                      await updateDoc(themeData, {
-                        allSections: [...comps],
-                      });
-                    } else if (!editFiles && !itemIndex) {
-                      comps[compIndex].compData.pic = img;
-                      await updateDoc(themeData, {
-                        allSections: [...comps],
-                      });
+                        await updateDoc(themeData, {
+                          allSections: [...comps],
+                        });
+                      } else if (!editFiles && !itemIndex) {
+                        comps[compIndex].compData.pic = img;
+                        await updateDoc(themeData, {
+                          allSections: [...comps],
+                        });
+                      }
                     }
                   }}
                   style={bgSstyle}
