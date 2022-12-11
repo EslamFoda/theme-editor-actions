@@ -15,6 +15,7 @@ const useCloseEditor = () => {
       addSection: false,
       editEffects: false,
       stylesEditing: false,
+      bgImg: false,
     });
   };
 
