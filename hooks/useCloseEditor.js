@@ -8,7 +8,7 @@ const useCloseEditor = () => {
     const themeData = doc(db, "themes", themeId);
     await updateDoc(themeData, {
       compName: "",
-      editImg: false,
+      editImg: false,           
       editFiles: false,
       colorsEdit: false,
       fontEdit: false,

@@ -2,6 +2,7 @@ import Designs from "./designs";
 import useCompData from "../../../hooks/useCompData";
 import { db } from "../../../utlis/firebase";
 import { doc, updateDoc } from "firebase/firestore";
+import useCloseEditor from "../../../hooks/useCloseEditor";
 const DesignFromSection = ({
   designs,
   compName,
@@ -10,6 +11,7 @@ const DesignFromSection = ({
   themeId,
 }) => {
   const { compData } = useCompData(compName);
+  const {handleCloseEditor} = useCloseEditor()
   const themeData = doc(db, "themes", themeId);
 
   const handleCreateSection = async (i) => {
@@ -32,6 +34,7 @@ const DesignFromSection = ({
       allSections: [...comps],
       selectSection: false,
     });
+    handleCloseEditor()
   };
   return (
     <>
