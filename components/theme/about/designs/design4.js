@@ -17,9 +17,9 @@ const Design4 = () => {
                 accomplishments and any awards you have received Use this
                 section to showcase the features of your brand
               </p>
-              <button className="bg-primary  p-[1px] px-2 text-small rounded-sm text-white">
-                more
-              </button>
+              <button className="text-white  rounded-sm bg-primary p-[1px] px-2   text-small ">
+             Learn More
+            </button>
             </div>
           </Container>
         </div>
