@@ -14,7 +14,7 @@ const ActionNavBar = ({
   editEffects,
   colorsEdit,
   editSections,
-  stylesEditing
+  stylesEditing,
 }) => {
   const themeData = doc(db, "themes", themeId);
   const device = useSelector((state) => state.mainWidth.device);
@@ -24,16 +24,11 @@ const ActionNavBar = ({
       {" "}
       <div className="bg-[#353f4b]  py-2 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-2 items-center">
         <div className="justify-self-start px-2  flex gap-3 items-center">
-          <PreviewEdit
-            themeData={themeData}
-            dispatch={dispatch}
-            editSections={editSections}
-          />
+          <PreviewEdit themeData={themeData} editSections={editSections} />
 
-          <LookAndFeel 
-          stylesEditing={stylesEditing}
+          <LookAndFeel
+            stylesEditing={stylesEditing}
             themeData={themeData}
-            dispatch={dispatch}
             editSections={editSections}
             fontEdit={fontEdit}
             editEffects={editEffects}
@@ -62,9 +57,7 @@ const ActionNavBar = ({
               >
                 <div className="flex gap-2 rounded-sm bg-[#283340] cursor-pointer hover:bg-[hsla(0,0%,100%,.7)] hover:text-[#0a0a0a] p-2">
                   <IoImageOutline size={25} />
-                  <span className="font-semibold hidden lg:block ">
-                    Files
-                  </span>
+                  <span className="font-semibold hidden lg:block ">Files</span>
                 </div>
               </div>
             </Toggle.Root>

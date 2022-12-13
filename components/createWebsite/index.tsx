@@ -116,7 +116,7 @@ const CreateWebsite = ({ user }) => {
                       nextIndex: 0,
                       selectSection: false,
                       stylesEditing: false,
-                      bgImg:false,
+                      bgImg: false,
                       themeColor: "Captain-Green",
                       themeFont: "sans",
                       themeEffect: "no-animation",

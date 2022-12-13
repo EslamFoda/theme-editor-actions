@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useEffect } from "react";
 import ActionNavBar from "../actionNavBar";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import useChooseDesign from "../../hooks/useChooseDesign";
 import SelectDesign from "./common/selectDesign";
 import SelectSection from "./common/selectSection";

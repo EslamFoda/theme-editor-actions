@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 
 const useCompData = (compName) => {
   // const compName = useSelector((state) => state.compName.compName);
@@ -35,7 +34,6 @@ const useCompData = (compName) => {
       },
     ],
   };
-  const heroData = useSelector((state) => state.hero.heroData);
   const serviceData = {
     headers: {
       title: "<h1 class='text-2xl font-semibold'>Our Services</h1>",
