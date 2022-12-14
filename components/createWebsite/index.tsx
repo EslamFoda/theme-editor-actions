@@ -88,6 +88,121 @@ const CreateWebsite = ({ user }) => {
                         },
                         {
                           id: Math.floor(Math.random() * Date.now()).toString(),
+                          compName: "about",
+                          backgroundImage: "",
+                          bgImgColor: {
+                            r: 255,
+                            g: 255,
+                            b: 255,
+                            a: 0,
+                          },
+                          totalDesigns: 7,
+                          designNum: 6,
+                          enableBgColor: false,
+                          selectedBgImg: "",
+                          compData: {
+                            title:
+                              "<h1 class='text-4xl font-semibold'>About Us</h1>",
+                            subTitle:
+                              "<p>Write about your businesses background, including your history, accomplishments and any awards you may have received. Use this section to show your brand’s personality.</p>",
+                            btn: "<span>Learn More</span>",
+                            pic: "https://images.unsplash.com/photo-1483706571191-85c0c76b1947?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79d169c2bf199ce6912f72c20ec301e4&auto=format&fit=crop&w=500&q=80",
+                          },
+                          backgroundColor: {
+                            r: 255,
+                            g: 255,
+                            b: 255,
+                            a: 1,
+                          },
+                        },
+                        {
+                          id: Math.floor(Math.random() * Date.now()).toString(),
+                          compName: "contact",
+                          backgroundImage: "",
+                          bgImgColor: {
+                            r: 255,
+                            g: 255,
+                            b: 255,
+                            a: 0,
+                          },
+                          totalDesigns: 2,
+                          designNum: 1,
+                          enableBgColor: false,
+                          selectedBgImg: "",
+                          compData: {
+                            contacts: [
+                              {
+                                details:
+                                  "<p class='text-xs text-gray-300'>info@business.com</p>",
+                                iconName: "email",
+                                title:
+                                  "<h1 class='4xl font-semibold'>email</h1>",
+                                id: 1,
+                              },
+                              {
+                                details:
+                                  "<p class='text-xs text-gray-300'>1(800) - 374 - 990</p>",
+                                iconName: "phone",
+                                title:
+                                  "<h1 class='4xl font-semibold'>Phone</h1>",
+                                id: 2,
+                              },
+                              {
+                                details:
+                                  "<p class='text-xs text-gray-300'>301 W. 41st Street, Suite 501 Miami Beach, FL 33140</p>",
+                                iconName: "address",
+                                title:
+                                  "<h1 class='4xl font-semibold'>Address</h1>",
+                                id: 3,
+                              },
+                            ],
+                            items: [
+                              {
+                                id: 1,
+                                inputType: "text",
+                                placeHolder: "Name",
+                                required: false,
+                              },
+                              {
+                                id: 2,
+                                inputType: "email",
+                                placeHolder: "Email",
+                                required: false,
+                              },
+                              {
+                                id: 3,
+                                inputType: "tel",
+                                placeHolder: "Phone",
+                                required: false,
+                              },
+                              {
+                                id: 4,
+                                inputType: "text",
+                                placeHolder: "Address",
+                                required: false,
+                              },
+                              {
+                                id: 5,
+                                inputType: "textarea",
+                                placeHolder: "Message",
+                                required: false,
+                              },
+                            ],
+                            title:
+                              "<h1 class='text-4xl font-semibold'>Contact Us</h1>",
+                            subTitle:
+                              "<p>Our team is always available to assist you.</p>",
+                            btn: "<span>Send</span>",
+                          },
+                          backgroundColor: {
+                            r: 255,
+                            g: 255,
+                            b: 255,
+                            a: 1,
+                          },
+                        },
+                        {
+                          id: Math.floor(Math.random() * Date.now()).toString(),
                           compName: "footer",
                           designNum: 1,
                           totalDesigns: 5,
