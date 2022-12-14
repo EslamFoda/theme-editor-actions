@@ -1,23 +1,12 @@
-import React from "react";
-
-const Design4 = ({ choose = false }) => {
+const Design4 = () => {
   return (
-    <>
-      {
-        choose ? <div className="bg-white w-full h-full"></div> : null
-        // <div>
-        //   <Container className="py-10 text-center">
-        //     <div className="py-8">
-        //       <EditorComp
-        //         handleEdit={handleEdit}
-        //         initialValue={footerData.copyRight}
-        //         keys="copyRight"
-        //       />
-        //     </div>
-        //   </Container>
-        // </div>
-      }
-    </>
+    <div className="bg-white h-full text-center flex justify-center flex-col  p-8">
+      <div>
+        <span className="text-small font-semibold text-gray-400">
+          © All rights reserved
+        </span>
+      </div>
+    </div>
   );
 };
 

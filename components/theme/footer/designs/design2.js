@@ -1,37 +1,18 @@
-import React from "react";
 
-
-const Design1 = ({
-  choose = false,
-  
-}) => {
-  
+const Design1 = () => {
   return (
-    <div className="bg-white w-full h-full">
-      {choose ? (
-        <div className=""></div>
-      ) : (
-        null
-        // <div>
-        //   <Container className="py-10 text-center">
-        //     <div className=" border-b border-solid py-5 border-b-[#96999d]">
-        //       <EditorComp
-        //         handleEdit={handleEdit}
-        //         initialValue={footerData.desc}
-        //         keys="desc"
-        //       />
-             
-        //     </div>
-        //     <div className="  gap-6 py-5">
-        //       <EditorComp
-        //         handleEdit={handleEdit}
-        //         initialValue={footerData.copyRight}
-        //         keys="copyRight"
-        //       />
-        //     </div>
-        //   </Container>
-        // </div>
-      )}
+    <div className="bg-white h-full text-center flex justify-center flex-col  p-8">
+      <div className=" border-b border-solid py-2 border-b-[#96999d]">
+        <p className="text-very-small">
+          orem ipsum dolor sit amet, consectetuputate eros. Fusce imperdiet
+          condimentum augue, ut ull
+        </p>
+      </div>
+      <div>
+        <span className="text-small font-semibold text-gray-400">
+          © All rights reserved
+        </span>
+      </div>
     </div>
   );
 };

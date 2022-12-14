@@ -11,7 +11,11 @@ const HomeNav = ({ user }) => {
         <div className="flex items-center gap-4">
           <Avatar user={user} />
           <h1 className="lg:text-base md:text-base text-xs">
-            {user?.email ? user?.email : "Logged in as Guest"}
+            {user && user.email
+              ? user.email
+              : user && !user.email
+              ? "Logged in as Guest"
+              : ""}
           </h1>
         </div>
         <Logout />
