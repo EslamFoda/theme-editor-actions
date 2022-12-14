@@ -35,7 +35,7 @@ const UserWebsites = ({ user }) => {
         })
       ) : (
         <div className="w-full py-20 flex items-center justify-center text-center">
-          <span className="font-bold text-gray-400">You Don't Have Website Yet Create New One</span>
+          <span className="font-bold text-gray-400">You Dont Have Website Yet Create New One</span>
         </div>
       )}
     </div>
