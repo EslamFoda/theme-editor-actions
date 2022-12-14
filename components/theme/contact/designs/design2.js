@@ -33,7 +33,7 @@ const Design2 = () => {
           <div className="space-y-2">
             {socialData.map((contact) => {
               return (
-                <div id={contact.id} className="flex gap-1">
+                <div key={contact.id} className="flex gap-1">
                   <div className=" flex justify-center items-center">
                     <contact.icon size={7} />
                   </div>

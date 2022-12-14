@@ -31,6 +31,7 @@ const Design2 = () => {
                 className="absolute"
                 objectFit="cover"
                 layout="fill"
+                alt="gallery img"
               />
             </div>
           ))}

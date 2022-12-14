@@ -35,7 +35,7 @@ const Design1 = () => {
       <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-1">
         {socialData.map((contact) => {
           return (
-            <div id={contact.id} className="flex gap-1">
+            <div key={contact.id} className="flex gap-1">
               <div className="min-w-[16px] h-4  bg-primaryBg flex justify-center items-center">
                 <contact.icon size={7} className="text-primary" />
               </div>

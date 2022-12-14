@@ -28,6 +28,7 @@ const Design5 = () => {
                 className="absolute"
                 objectFit="cover"
                 layout="fill"
+                alt="gallery img"
               />
             </div>
           ))}
