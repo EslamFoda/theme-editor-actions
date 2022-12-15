@@ -14,7 +14,7 @@ export const sectionsImgs = [
   { src: "/assets/clients.png", id: 5, title: "clients" },
   { src: "/assets/gallery.png", id: 6, title: "gallery" },
   {
-    src: "/assets/testimonials.png",
+    src: "/assets/testi.png",
     id: 7,
     title: "testimonials",
   },
