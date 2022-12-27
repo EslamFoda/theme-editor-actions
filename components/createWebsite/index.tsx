@@ -225,7 +225,7 @@ const CreateWebsite = ({ user }) => {
                       editEffects: false,
                       editFiles: false,
                       editImg: false,
-                      editSections: false,
+                      editSections: true,
                       fontEdit: false,
                       itemIndex: 0,
                       nextIndex: 0,
